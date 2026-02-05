@@ -1,6 +1,8 @@
 
 // app  /layout.tsx
 
+// app/layout.tsx
+
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -47,9 +49,8 @@ export default function RootLayout({
         >
           <div style={{ maxWidth: 720, margin: "0 auto" }}>
             <p style={{ margin: 0 }}>
-
-              <a href="https://veriscopic.com">© Veriscopic</a> — Steward of the Veriscopic Evidence Standard
-
+              <a href="https://veriscopic.com">© Veriscopic</a> — Steward of the
+              Veriscopic Evidence Standard
             </p>
             <p style={{ margin: "0.25rem 0 0 0" }}>
               <a href="/privacy">Privacy</a> · <a href="/cookies">Cookies</a>
@@ -57,8 +58,15 @@ export default function RootLayout({
           </div>
         </footer>
 
+        {/* Veriscopic Consent Evidence banner */}
+        <script
+          src="https://www.veriscopic.com/consent-client.js"
+          data-veriscopic-site="cf836bbb-1e43-4ea2-8c1a-7bb4175ba72a"
+        />
+
       </body>
     </html>
   )
 }
+
 
