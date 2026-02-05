@@ -39,13 +39,24 @@ export default function RootLayout({
         <footer
           style={{
             borderTop: "1px solid #e5e7eb",
-            padding: "1rem",
+            marginTop: "4rem",
+            padding: "1.5rem 1rem",
             fontSize: "0.875rem",
             color: "#6b7280",
           }}
         >
-          © Veriscopic — Steward of the Veriscopic Evidence Standard
+          <div style={{ maxWidth: 720, margin: "0 auto" }}>
+            <p style={{ margin: 0 }}>
+
+              <a href="https://veriscopic.com">© Veriscopic</a> — Steward of the Veriscopic Evidence Standard
+
+            </p>
+            <p style={{ margin: "0.25rem 0 0 0" }}>
+              <a href="/privacy">Privacy</a> · <a href="/cookies">Cookies</a>
+            </p>
+          </div>
         </footer>
+
       </body>
     </html>
   )
