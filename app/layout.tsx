@@ -44,7 +44,7 @@ export default function RootLayout({
             color: "#6b7280",
           }}
         >
-          © Veriscopic Ltd — Steward of the Veriscopic Evidence Standard
+          © Veriscopic — Steward of the Veriscopic Evidence Standard
         </footer>
       </body>
     </html>
