@@ -8,7 +8,7 @@ export default function StewardshipPage() {
 
       <p>
         The Veriscopic Evidence Standard (VES) is published and stewarded by
-        Veriscopic Ltd.
+        Veriscopic (https://veriscopic.com).
       </p>
 
       <p>
@@ -26,6 +26,15 @@ export default function StewardshipPage() {
         VES is published as an open, referenceable standard intended to support
         independent verification and third-party assessment.
       </p>
+
+
+      <h2>Change Control</h2>
+      <p>
+        Changes to the Veriscopic Evidence Standard are published conservatively.
+        Backwards-incompatible changes, if ever required, will result in a new major
+        version.
+      </p>
+
     </main>
   )
 }

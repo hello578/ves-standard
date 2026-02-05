@@ -11,7 +11,17 @@ export default function SpecificationPage() {
         Standard (VES) v1.0. The key words <strong>MUST</strong>,{" "}
         <strong>SHALL</strong>, and <strong>MAY</strong> are to be interpreted as
         described in RFC 2119.
+        (<a href="https://www.rfc-editor.org/rfc/rfc2119" target="_blank" rel="noopener noreferrer">
+          https://www.rfc-editor.org/rfc/rfc2119
+        </a>).
       </p>
+      <h2>Status of This Standard</h2>
+      <p>
+        This document defines Version 1.0 of the Veriscopic Evidence Standard (VES).
+        It is published as a stable reference specification. Future revisions, if any,
+        will be versioned and published separately.
+      </p>
+
 
       <h2>1. Scope</h2>
       <p>
