@@ -1,10 +1,27 @@
 
 // app/page.tsx
 
+// app/page.tsx
+
 export default function HomePage() {
   return (
-    <main style={{ maxWidth: 720, margin: "4rem auto", padding: "0 1rem" }}>
-      <h1>Veriscopic Evidence Standard (VES)</h1>
+    <main
+      style={{
+        maxWidth: 720,
+        margin: "4rem auto",
+        padding: "0 1rem",
+      }}
+    >
+      <h1
+        style={{
+          fontSize: "2rem",
+          lineHeight: 1.25,
+          marginBottom: "1.5rem",
+          letterSpacing: "-0.01em",
+        }}
+      >
+        Veriscopic Evidence Standard (VES)
+      </h1>
 
       <p>
         The Veriscopic Evidence Standard (VES) is a published standard for defining
@@ -24,18 +41,29 @@ export default function HomePage() {
         implementation.
       </p>
 
-      <p>
+      <p style={{ marginTop: "1.5rem" }}>
         <strong>Current version:</strong> VES v1.0<br />
         <strong>Status:</strong> Active<br />
         <strong>Initial publication:</strong> 2026
       </p>
 
-      <ul>
-        <li><a href="/specification">Specification</a></li>
-        <li><a href="/versions">Versions</a></li>
-        <li><a href="/cite">Citation</a></li>
-        <li><a href="/stewardship">Stewardship</a></li>
-      </ul>
+      <nav style={{ marginTop: "2rem" }}>
+        <ul style={{ paddingLeft: "1.25rem" }}>
+          <li>
+            <a href="/specification">Specification</a>
+          </li>
+          <li>
+            <a href="/versions">Versions</a>
+          </li>
+          <li>
+            <a href="/cite">Citation</a>
+          </li>
+          <li>
+            <a href="/stewardship">Stewardship</a>
+          </li>
+        </ul>
+      </nav>
     </main>
   )
 }
+

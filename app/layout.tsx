@@ -1,6 +1,5 @@
 
 // app  /layout.tsx
-
 // app/layout.tsx
 
 import type { Metadata } from "next"
@@ -27,13 +26,24 @@ export default function RootLayout({
           color: "#111827",
         }}
       >
+        {/* Site identifier — not a competing title */}
         <header
           style={{
             borderBottom: "1px solid #e5e7eb",
             padding: "1rem",
           }}
         >
-          <strong>Veriscopic Evidence Standard</strong>
+          <div style={{ maxWidth: 720, margin: "0 auto" }}>
+            <span
+              style={{
+                fontSize: "0.875rem",
+                fontWeight: 600,
+                letterSpacing: "0.01em",
+              }}
+            >
+              Veriscopic Evidence Standard
+            </span>
+          </div>
         </header>
 
         {children}
@@ -52,22 +62,22 @@ export default function RootLayout({
               <a href="https://veriscopic.com">© Veriscopic</a> — Steward of the
               Veriscopic Evidence Standard
             </p>
+
             <p style={{ margin: "0.25rem 0 0 0" }}>
-              <a href="/privacy">Privacy</a> · <a href="/cookies">Cookies</a>
+              <a href="/privacy">Privacy</a> ·{" "}
+              <a href="/consent">View consent record</a> ·{" "}
+              Consent is evidenced at the moment judgement is exercised.
             </p>
           </div>
         </footer>
 
-        {/* Veriscopic Consent Evidence */}
+        {/* Veriscopic Consent Evidence — single source of truth */}
         <script
           src="https://www.veriscopic.com/consent-client.js"
           data-veriscopic-site="cf836bbb-1e43-4ea2-8c1a-7bb4175ba72a"
           defer
         ></script>
-
       </body>
     </html>
   )
 }
-
-

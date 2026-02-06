@@ -1,6 +1,8 @@
 
 // app/privacy/page.tsx
 
+// app/privacy/page.tsx
+
 export default function PrivacyPage() {
   return (
     <main style={{ maxWidth: 720, margin: "4rem auto", padding: "0 1rem" }}>
@@ -15,33 +17,37 @@ export default function PrivacyPage() {
       <h2>Data Processing</h2>
 
       <p>
-        This site does not collect personal data through forms, user accounts,
-        or profiling mechanisms. No registration or login is required to access
-        any part of the site.
+        This site does not collect personal data through forms, user accounts, or
+        profiling mechanisms. No registration or login is required to access any
+        part of the site.
       </p>
 
       <p>
-        Like most websites, limited technical information (such as IP address,
-        browser type, and request metadata) may be processed transiently by
-        hosting and delivery infrastructure for the purposes of security,
-        reliability, and performance. This information is not used to identify
-        individuals and is not combined with other data sources.
+        Limited technical information (such as IP address, browser type, and
+        request metadata) may be processed transiently by hosting and delivery
+        infrastructure for the purposes of security, reliability, and
+        performance. This information is not used to identify individuals and is
+        not combined with other data sources.
       </p>
 
-      <h2>Cookies</h2>
+      <h2>Consent Demonstration</h2>
 
       <p>
-        This site does not use non-essential cookies for analytics, advertising,
-        or behavioural tracking. Any consent interaction presented on this site
-        exists solely to demonstrate evidence-based consent capture in line with
-        the Veriscopic Evidence Standard.
+        Any consent interaction presented on this site exists solely to
+        demonstrate evidence-based consent capture in line with the Veriscopic
+        Evidence Standard.
       </p>
 
       <p>
-        Further information is available in the <a href="/cookies">Cookie Notice</a>.
+        Where consent is exercised, a record is created at the moment judgement
+        is exercised, including the applicable context and versioning
+        information. This record exists as an evidential artefact rather than as
+        a behavioural tracking mechanism, the applicable policy text and context
+        are preserved as part of the evidential record and may be inspected via
+        the Consent Record page.
       </p>
 
-      <h2>Stewardship and Contact</h2>
+      <h2>Stewardship</h2>
 
       <p>
         The Veriscopic Evidence Standard is stewarded by Veriscopic. Questions
@@ -51,3 +57,4 @@ export default function PrivacyPage() {
     </main>
   )
 }
+
