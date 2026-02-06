@@ -60,9 +60,9 @@ export default function RootLayout({
 
         {/* Veriscopic Consent Evidence banner */}
         <script
-          src="https://www.veriscopic.com/consent-client.js"
-          data-veriscopic-site="cf836bbb-1e43-4ea2-8c1a-7bb4175ba72a"
-        />
+          src="https://www.veriscopic.com/consent-client.js?v=1.0.0"
+          data-veriscopic-site="cf836bbb-1e43-4ea2-8c1a-7bb4175ba72a">
+        </script>
 
       </body>
     </html>
