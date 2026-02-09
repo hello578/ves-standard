@@ -76,6 +76,7 @@ export default function RootLayout({
           src="https://www.veriscopic.com/consent-client.js"
           data-veriscopic-site="cf836bbb-1e43-4ea2-8c1a-7bb4175ba72a"
           data-veriscopic-show-mark="true"
+          data-veriscopic-persistent-mark="true"
           defer
         ></script>
       </body>
