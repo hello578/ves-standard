@@ -1,4 +1,3 @@
-
 // app/consent/page.tsx (third-party safe)
 
 "use client"
@@ -40,6 +39,26 @@ export default function ConsentRecordPage() {
         presented at the time consent was given.
       </p>
 
+      {/* ✅ ADD THIS BLOCK HERE */}
+      <h2>What is recorded</h2>
+
+      <p>
+        When you make a consent choice on this site, a cryptographic evidence
+        record is created at that moment. This record preserves:
+      </p>
+
+      <ul>
+        <li>The consent decision exercised</li>
+        <li>The site and policy context presented</li>
+        <li>The time the decision was made</li>
+      </ul>
+
+      <p>
+        These records are preserved independently under the Veriscopic Evidence
+        Standard (VES). This page does not display the evidential record itself.
+      </p>
+
+      {/* Reset section remains unchanged */}
       <h2>Reset consent</h2>
 
       <p>
@@ -68,4 +87,5 @@ export default function ConsentRecordPage() {
     </main>
   )
 }
+
 
