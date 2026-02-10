@@ -77,8 +77,10 @@ export default function RootLayout({
           data-veriscopic-site="cf836bbb-1e43-4ea2-8c1a-7bb4175ba72a"
           data-veriscopic-show-mark="true"
           data-veriscopic-persistent-mark="true"
+          data-veriscopic-record-url="https://www.veriscopic.com/record/vesstandard.org/05e0d5e1-0d18-4ece-990d-a240b5d34823"
           defer
         ></script>
+
       </body>
     </html>
   )
