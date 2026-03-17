@@ -4,20 +4,25 @@
 
 export default function ConsentRecordPage() {
   function resetConsent() {
-    if (typeof window !== "undefined" && window.VeriscopicConsent?.reset) {
-      window.VeriscopicConsent.reset()
-      return
+  if (typeof window !== "undefined") {
+    const w = window as typeof window & {
+      VeriscopicConsent?: { reset: () => void }
     }
 
-    // Fallback: local reset only
-    try {
-      localStorage.removeItem("veriscopic-cookie-consent")
-      localStorage.removeItem("veriscopic-consent-hash")
-      window.location.reload()
-    } catch {
-      // no-op
+    if (w.VeriscopicConsent?.reset) {
+      w.VeriscopicConsent.reset()
+      return
     }
   }
+
+  try {
+    localStorage.removeItem("veriscopic-cookie-consent")
+    localStorage.removeItem("veriscopic-consent-hash")
+    window.location.reload()
+  } catch {
+    // no-op
+  }
+}
 
   return (
     <main style={{ maxWidth: 720, margin: "4rem auto", padding: "0 1rem" }}>

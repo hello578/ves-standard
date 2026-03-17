@@ -1,69 +1,171 @@
-
 // app/page.tsx
-
-// app/page.tsx
+import Link from "next/link"
 
 export default function HomePage() {
   return (
-    <main
-      style={{
-        maxWidth: 720,
-        margin: "4rem auto",
-        padding: "0 1rem",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "2rem",
-          lineHeight: 1.25,
-          marginBottom: "1.5rem",
-          letterSpacing: "-0.01em",
-        }}
-      >
-        Veriscopic Evidence Standard (VES)
-      </h1>
+    <main>
 
-      <p>
-        The Veriscopic Evidence Standard (VES) is a published standard for defining
-        how evidence of judgement and decision-making may be captured, preserved,
-        and verified at the moment it is exercised.
-      </p>
+      {/* ══════════════════════════════
+          HERO — DIAGRAM FIRST
+      ══════════════════════════════ */}
+      <section className="hero">
+        <div className="container">
 
-      <p>
-        VES is designed to support situations where decisions are subject to
-        retrospective scrutiny, including regulatory review, audit, insurance
-        assessment, legal inquiry, or board-level accountability.
-      </p>
+          {/* Framework diagram */}
+          <div className="hero-diagram">
+            <img
+              src="/images/ves-f1-decision-evidence-stack.svg"
+              alt="VES-F1 — The Veriscopic Decision Evidence Stack"
+              className="diagram-img"
+            />
+          </div>
 
-      <p>
-        The standard specifies requirements for point-in-time evidence, integrity
-        preservation, and verifiability, independent of any specific software
-        implementation.
-      </p>
+          {/* Copy block below diagram */}
+          <div className="hero-text">
+            <p className="eyebrow">VES Framework Model</p>
 
-      <p style={{ marginTop: "1.5rem" }}>
-        <strong>Current version:</strong> VES v1.0<br />
-        <strong>Status:</strong> Active<br />
-        <strong>Initial publication:</strong> 2026
-      </p>
+            <h1>
+              The Veriscopic<br />
+              Decision Evidence Stack
+            </h1>
 
-      <nav style={{ marginTop: "2rem" }}>
-        <ul style={{ paddingLeft: "1.25rem" }}>
-          <li>
-            <a href="/specification">Specification</a>
-          </li>
-          <li>
-            <a href="/versions">Versions</a>
-          </li>
-          <li>
-            <a href="/cite">Citation</a>
-          </li>
-          <li>
-            <a href="/stewardship">Stewardship</a>
-          </li>
-        </ul>
-      </nav>
+            <p className="hero-lead">
+              A standard defining how operational decisions become{" "}
+              <span className="text-strong">verifiable evidence</span>{" "}
+              under scrutiny.
+            </p>
+
+            <div className="hero-actions">
+              <Link href="/specification" className="btn btn-primary">
+                View specification
+              </Link>
+              <Link href="/concepts" className="btn btn-ghost">
+                Explore concepts
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ══════════════════════════════
+          INTERPRETATION — 2-COL
+      ══════════════════════════════ */}
+      <section className="section section-divider">
+        <div className="container">
+
+          <div className="grid-2">
+            <div className="card">
+              <h3>Decision-state is evidentiary</h3>
+              <p>
+                <span className="text-strong">
+                  What existed at the moment a decision was executed
+                </span>{" "}
+                determines defensibility under scrutiny.
+              </p>
+            </div>
+
+            <div className="card">
+              <h3>Reconstruction is insufficient</h3>
+              <p>
+                Logs, documents, and system traces cannot reliably reproduce
+                decision conditions after the fact.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ══════════════════════════════
+          CORE AXIOM
+      ══════════════════════════════ */}
+      <section className="section section-divider">
+        <div className="container">
+
+          <div className="card-framed center-card">
+            <p className="text-muted">Core principle</p>
+            <p className="axiom">
+              Decisions are made in systems. Defensibility is created at execution
+              — or not at all.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ══════════════════════════════
+          STRUCTURE — 3-COL
+      ══════════════════════════════ */}
+      <section className="section section-divider">
+        <div className="container">
+
+          <div className="section-header">
+            <h2>Structure of the standard</h2>
+            <span className="section-rule" aria-hidden="true" />
+          </div>
+
+          <div className="grid-3">
+            <div className="card">
+              <h3>Operational layer</h3>
+              <p>
+                Where decisions are formed, evaluated, and committed.
+              </p>
+            </div>
+
+            <div className="card">
+              <h3>Evidence layer</h3>
+              <p>
+                Where decision-state is captured as a canonical,
+                tamper-resistant record.
+              </p>
+            </div>
+
+            <div className="card">
+              <h3>Scrutiny layer</h3>
+              <p>
+                Where evidence is tested under audit, dispute,
+                or regulatory review.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ══════════════════════════════
+          CTA CARDS
+      ══════════════════════════════ */}
+      <section className="section section-divider">
+        <div className="container">
+
+          <div className="grid-2">
+
+            <div className="card">
+              <h3>Specification</h3>
+              <p>
+                Formal definition of the Veriscopic Evidence Standard.
+              </p>
+              <Link href="/specification" className="card-link">
+                Open specification →
+              </Link>
+            </div>
+
+            <div className="card">
+              <h3>Versions</h3>
+              <p>
+                Track the evolution and versioned releases of the standard.
+              </p>
+              <Link href="/versions" className="card-link">
+                View versions →
+              </Link>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
     </main>
   )
 }
-
