@@ -53,7 +53,7 @@ export default function RootLayout({
 
         {/* CONSENT SCRIPT */}
         <script
-          src="https://www.veriscopic.com/consent-client.js"
+           src="https://www.veriscopic.com/consent-client.js?v=3"
           data-veriscopic-site="cf836bbb-1e43-4ea2-8c1a-7bb4175ba72a"
           data-veriscopic-show-mark="true"
           data-veriscopic-persistent-mark="true"
