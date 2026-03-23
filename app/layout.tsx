@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Header } from "./components/header"
 import { Footer } from "./components/footer"
 import "./globals.css"
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://vesstandard.org"),
@@ -61,6 +62,7 @@ export default function RootLayout({
           defer
         />
       </body>
+      <Analytics/>
     </html>
   )
 }
