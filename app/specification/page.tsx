@@ -1,6 +1,6 @@
 
-// specification/page.tsx
 // app/specification/page.tsx
+
 import { PageFrame } from "../components/page-frame"
 
 export default function SpecificationPage() {
