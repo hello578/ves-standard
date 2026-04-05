@@ -1,48 +1,47 @@
+// app/concepts/page.tsx
 
-// app/concepts/page.tsx
-// app/concepts/page.tsx
 import Link from "next/link"
 
 const concepts = [
   {
     title: "Evidentiary Substrate",
-    text: "What actually existed at the moment a decision crossed the execution boundary. This forms the foundation upon which all defensibility depends. If it did not exist at that moment, it cannot be proven later."
+    text: "The complete, time-bound record of what actually existed at the moment a decision crossed the execution boundary, preserved in a form that can be independently verified under scrutiny. If it did not exist and was not captured at that moment, it cannot be proven later. Distinct from logs, telemetry, or documentation, it captures what can be proven — not what can be described.\n\nThis forms the foundation of decision defensibility across audit, dispute, and regulatory review."
   },
   {
     title: "Decision State",
-    text: "The complete set of inputs, authority, system outputs, and contextual signals present at the moment a consequential judgement is exercised. This is what must be preserved for a decision to be defensible under scrutiny."
+    text: "The full set of inputs, authority, system outputs, and contextual signals that existed and were relied upon at the moment a consequential judgement was exercised. This is the minimum unit required for independent reconstruction under scrutiny."
   },
   {
     title: "Execution Boundary",
-    text: "The point at which a recommendation, analysis, or model output becomes a committed organisational act. This is where permission must be proven, not assumed."
+    text: "The point at which a recommendation, analysis, or model output becomes a committed organisational act. At this boundary, authority, state, and constraints must be evidenced — not inferred."
   },
   {
     title: "Point-in-Time Evidence",
-    text: "Evidence captured at or immediately adjacent to the execution boundary, before hindsight, reinterpretation, or reconstruction intervene. This anchors what actually held at the moment of action."
+    text: "Evidence captured at or immediately adjacent to the execution boundary, before hindsight, reinterpretation, or reconstruction intervene, preserving the decision-state as it actually existed."
   },
   {
     title: "Evidence Pack",
-    text: "A structured representation of the decision state, assembled in a form that preserves integrity and enables independent verification. Not a report, but a verifiable record of what actually existed."
+    text: "A structured, integrity-bound representation of the decision-state, assembled to enable independent verification and reconstruction under scrutiny. Not a report, but a verifiable record of what actually existed."
   },
   {
     title: "Defensibility Layer",
-    text: "The layer that determines whether evidence holds under challenge or collapses into reconstruction. It governs whether a decision can withstand scrutiny in practice."
+    text: "The layer that determines whether a decision can be independently reconstructed and withstand scrutiny. It governs whether evidence holds, or collapses into retrospective explanation."
   },
   {
     title: "Structural Defensibility",
-    text: "The degree to which a decision can be supported by complete, coherent, and verifiable evidence of what existed at the moment it was made. High structural defensibility means the decision can stand on its own."
+    text: "The degree to which a decision can be supported by complete, coherent, and independently verifiable evidence of what existed at the moment it was made. High structural defensibility means the decision can stand on its own under scrutiny."
   },
   {
     title: "Reconstruction Gap",
-    text: "The difference between what actually existed at decision-time and what can later be reconstructed from logs, documents, and system traces. This is where most exposure forms."
+    text: "The difference between what actually existed at decision-time and what can later be reconstructed from logs, documents, and system traces. This gap is where defensibility fails and exposure forms."
   },
   {
     title: "Scrutiny Boundary",
-    text: "The point at which a decision becomes subject to external challenge, including audit, regulatory review, dispute, or litigation. This is where evidence is tested."
+    text: "The point at which a decision becomes subject to external challenge, including audit, regulatory review, dispute, or litigation. This is where evidence is tested against independent verification."
   },
   {
     title: "Independent Verifiability",
-    text: "The ability for a third party to confirm that an evidence record existed at a specific time and has not been materially altered. This is what separates evidence from assertion."
+    text: "The ability for an independent third party to confirm that an evidence record existed at a specific time and has not been materially altered, without relying on internal assertions."
   }
 ]
 
@@ -53,11 +52,11 @@ export default function ConceptsPage() {
       {/* ── PAGE HEADER ── */}
       <section className="page-hero">
         <div className="container">
-          <p className="eyebrow">VES Terminology</p>
+          <p className="eyebrow">VES v1.1 — Normative Definitions</p>
           <h1>Core Concepts</h1>
           <p>
-            VES v1.1 defines a structured language for how consequential decisions
-            become evidentially real and defensible under scrutiny.
+            A structured language for how consequential decisions become evidentially real,
+            independently verifiable, and defensible under scrutiny.
           </p>
         </div>
       </section>
@@ -69,8 +68,30 @@ export default function ConceptsPage() {
             <p className="principle-lead">Foundational distinction</p>
             <p className="principle-statement">
               VES distinguishes between explaining a decision and proving it.
-              The evidentiary substrate determines what can be proven —
-              the defensibility layer determines whether that proof holds under scrutiny or collapses into reconstruction.
+              Most systems can describe how a decision was made.
+              Far fewer can demonstrate what actually existed at the moment it was made.
+
+              The evidentiary substrate determines what can be proven.
+              The defensibility layer determines whether that proof holds under scrutiny or collapses into reconstruction.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── POSITIONING BLOCK (CRITICAL ADD) ── */}
+      <section className="section">
+        <div className="container">
+          <div className="principle-block">
+            <p className="principle-lead">Position in the stack</p>
+            <p className="principle-statement">
+              VES does not replace governance systems, observability tools, or cryptographic controls.
+
+              Visibility shows what can be seen.
+              Cryptography can prove integrity.
+
+              But neither, on their own, reconstructs the full decision-state as it actually existed.
+
+              The evidentiary substrate binds context, authority, system state, and outcome into a form that can be independently verified under scrutiny.
             </p>
           </div>
         </div>
@@ -92,7 +113,14 @@ export default function ConceptsPage() {
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3 className="concept-title">{c.title}</h3>
-                <p className="concept-text">{c.text}</p>
+                <p className="concept-text">
+                  {c.text.split("\n\n").map((para, idx) => (
+                    <span key={idx}>
+                      {para}
+                      <br /><br />
+                    </span>
+                  ))}
+                </p>
               </div>
             ))}
           </div>
@@ -114,7 +142,7 @@ export default function ConceptsPage() {
             <div className="card">
               <h3>Framework Model</h3>
               <p>Visual representation of the VES decision evidence stack.</p>
-              <Link href="/" className="card-link">
+              <Link href="/framework-model" className="card-link">
                 View model →
               </Link>
             </div>
