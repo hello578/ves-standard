@@ -1,6 +1,7 @@
 
 // app/specification/page.tsx
 
+
 import { PageFrame } from "../components/page-frame"
 
 export default function SpecificationPage() {
@@ -15,6 +16,17 @@ export default function SpecificationPage() {
         VES defines the requirements of a scrutiny-ready evidence record. It does
         not mandate a single product, vendor, or software architecture.
       </div>
+
+      <h2>Normative Principle</h2>
+      <p>
+        A decision is only defensible if the full decision-state can be independently
+        verified to have existed and held at the moment it crossed the execution
+        boundary.
+      </p>
+      <p>
+        All representations derived after this moment are considered reconstruction
+        and are subordinate to point-in-time evidence.
+      </p>
 
       <h2>Status of this standard</h2>
       <p>
@@ -38,26 +50,31 @@ export default function SpecificationPage() {
       <h2>2. Definitions</h2>
       <ul>
         <li>
-          <strong>Decision-state</strong> — the evidence context that existed at
-          the moment a consequential judgement was exercised.
+          <strong>Decision-state</strong> — the complete set of inputs, authority,
+          constraints, system outputs, and contextual conditions that existed and
+          were actively relied upon at the moment a consequential judgement was
+          exercised. A decision-state is only valid if it enables independent
+          verification of whether the decision would hold or fail under scrutiny.
         </li>
         <li>
-          <strong>Evidence Pack</strong> — a structured record capturing the
-          relevant decision-state at a specific point in time.
+          <strong>Evidence Pack</strong> — a structured, integrity-bound record
+          capturing the decision-state at a specific point in time, designed to
+          enable independent verification and reconstruction under scrutiny.
         </li>
         <li>
           <strong>Execution boundary</strong> — the point at which a judgement,
-          recommendation, or assessment becomes a committed organisational act or
-          outcome.
+          recommendation, or assessment becomes a committed organisational act and
+          exposure attaches.
         </li>
         <li>
-          <strong>Point-in-time</strong> — the relevant moment at which the
-          decision-state is recorded, before later hindsight, reinterpretation, or
-          post-event reconstruction.
+          <strong>Point-in-time</strong> — the moment at which the decision-state
+          is recorded, before hindsight, reinterpretation, or post-event
+          reconstruction intervene.
         </li>
         <li>
           <strong>Verifier</strong> — a party capable of independently assessing
-          the integrity, stated timing, and completeness of an Evidence Pack.
+          the integrity, timing, and completeness of an Evidence Pack without
+          reliance on internal system assertions.
         </li>
       </ul>
 
@@ -71,6 +88,31 @@ export default function SpecificationPage() {
         <li>the relevant inputs, artefacts, or system outputs relied upon</li>
         <li>an integrity mechanism enabling later verification</li>
       </ul>
+
+      <p>
+        Evidence Packs MUST include sufficient information to determine:
+      </p>
+      <ul>
+        <li>whether the acting authority was valid at the moment of execution</li>
+        <li>whether governing constraints and controls were active and effective</li>
+        <li>whether the decision-state was complete and materially sufficient</li>
+      </ul>
+
+      <p>
+        Omission of material elements that prevent independent reconstruction SHALL
+        constitute non-conformance.
+      </p>
+
+      <h3>3.1 Held Conditions</h3>
+      <p>
+        Evidence Packs MUST enable verification that all governing authority,
+        constraints, and control conditions were not only defined, but actively
+        held at the moment of execution.
+      </p>
+      <p>
+        Assertions of policy, control, or enforcement without evidence of active
+        application at the execution boundary SHALL NOT be considered sufficient.
+      </p>
 
       <h2>4. Integrity and sealing</h2>
       <p>
@@ -100,8 +142,14 @@ export default function SpecificationPage() {
       <ul>
         <li>whether the evidence record existed at the claimed time</li>
         <li>whether it has remained materially unaltered</li>
-        <li>whether the minimum required elements were present</li>
+        <li>whether the decision-state was complete and sufficient</li>
+        <li>whether authority, constraints, and governing conditions can be verified as having held at execution</li>
       </ul>
+
+      <p>
+        Verification SHALL NOT rely solely on internal system assertions or
+        reconstructed records.
+      </p>
 
       <h2>7. Implementation neutrality</h2>
       <p>
@@ -115,6 +163,32 @@ export default function SpecificationPage() {
       <p>
         Where evidence is created, cited, assessed, or challenged over time,
         references to VES SHOULD specify the applicable version of the standard.
+      </p>
+
+      <h2>9. Defensibility failure</h2>
+      <p>
+        A defensibility failure occurs when a decision cannot be supported by
+        independently verifiable evidence of its decision-state at the execution
+        boundary.
+      </p>
+      <p>
+        In such cases, evidence collapses into reconstruction, interpretation, or
+        assertion, and the decision is exposed under scrutiny.
+      </p>
+      <p>
+        Defensibility failure SHALL be considered non-conformance with this
+        standard.
+      </p>
+
+      <h2>10. Reconstruction limitation</h2>
+      <p>
+        Evidence derived solely from logs, telemetry, documentation, or system
+        traces after the execution boundary SHALL NOT be considered sufficient to
+        establish decision-state.
+      </p>
+      <p>
+        Where decision-state cannot be demonstrated from point-in-time evidence,
+        reconstruction SHALL be treated as incomplete and non-authoritative.
       </p>
 
       <div className="divider" />
