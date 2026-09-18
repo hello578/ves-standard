@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node scripts/dev.mjs",
+    "generate:validator": "node scripts/generate-validator.mjs",
+    "build": "npm run generate:validator && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@vercel/analytics": "^2.0.1",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "framer-motion": "^13.4.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"

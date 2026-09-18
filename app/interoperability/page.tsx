@@ -1,0 +1,12 @@
+import type { Metadata } from "next"
+import { PageFrame } from "../components/page-frame"
+
+export const metadata: Metadata = { title: "Interoperability", description: "How VES preserves native external evidence inside a portable consequential decision-state.", alternates: { canonical: "/interoperability" } }
+const examples=[["Runtime receipt","May establish a recorded system action, control result or agent execution."],["Core claim system","May supply claim state, transaction history and source references."],["Signed document","May supply a fixed instruction, approval, wording or acknowledgement."],["External data source","May supply time-bound reference data with declared issuer and applicability."]]
+export default function InteroperabilityPage(){return <PageFrame eyebrow="External Evidence Profile" title="Native evidence remains native." intro="VES links evidence from source systems and external standards without requiring those artefacts to be rewritten into a proprietary format." toc={[{id:"principle",label:"Principle"},{id:"wrapper",label:"Wrapper"},{id:"examples",label:"Examples"},{id:"boundary",label:"Boundary"}]}>
+  <h2 id="principle">Interoperability principle</h2><p>VES is an envelope for consequential decision evidence, not a replacement for every log, protocol or data model. A source object remains authoritative in its native domain. The VES wrapper declares how that object relates to the decision and how it may be assessed later.</p>
+  <h2 id="wrapper">External Evidence Object wrapper</h2><p>The wrapper records an opaque evidence identifier, type, source system or standard, issuer, version, capture time, applicability period, integrity details, decision relation and known limitations. It MAY reference an object rather than embed its contents.</p>
+  <h2 id="examples">Illustrative inputs</h2><div className="evidence-grid">{examples.map(([title,description])=><article key={title} className="evidence-card"><h3>{title}</h3><p>{description}</p></article>)}</div>
+  <h2 id="boundary">The consequential-decision boundary</h2><div className="callout callout-warning">A valid runtime receipt may be valuable source evidence. On its own, it does not establish business authority, governing conditions, human judgement, organisational commitment or a complete decision-state.</div><p>VES evaluates whether the wider evidence package supports the selected profile. It does not publish competitor gap analyses and does not require a particular external standard.</p>
+  </PageFrame>}
+

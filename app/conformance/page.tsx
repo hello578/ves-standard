@@ -1,65 +1,10 @@
-
-// app/conformance/page.tsx
-// app/conformance/page.tsx
+import type { Metadata } from "next"
 import { PageFrame } from "../components/page-frame"
 
-export default function ConformancePage() {
-  return (
-    <PageFrame
-      eyebrow="Implementation Alignment"
-      title="Conformance"
-      intro="VES defines what a scrutiny-ready evidence record must contain. Conformance describes the degree to which a system, workflow, or organisation aligns with those requirements."
-    >
+export const metadata: Metadata = { title: "Conformance", description: "Current VES 1.2 Draft conformance claims and the planned testing boundary.", alternates: { canonical: "/conformance" } }
+export default function ConformancePage(){return <PageFrame eyebrow="Current position" title="Conformance programme in development" intro="VES 1.2 Draft provides schemas and test vectors for implementation review. It does not currently operate a certification, seal or award programme." toc={[{id:"claims",label:"Current claims"},{id:"tests",label:"Future tests"},{id:"marks",label:"Marks"}]}>
+  <h2 id="claims">What may be claimed now</h2><p>An implementation may state that it targets or has been structurally tested against a named VES 1.2 Draft schema or profile, provided the version, test scope, date and limitations are stated. It must not imply endorsement by Veriscopic.</p><div className="callout">Recommended language: “Designed against the VES 1.2 Draft Decision Envelope schema. This is an implementation statement, not certification by VES or Veriscopic.”</div>
+  <h2 id="tests">How conformance testing is expected to work</h2><p>Future tests are expected to distinguish schema conformance, profile completeness, evidence integrity, authority evidence and replayability. A passing structural test will not establish that source evidence is true or that the underlying decision was correct.</p>
+  <h2 id="marks">No public marks in this release</h2><p>VES does not publish Platinum, Sealed, Anchored or other certification badges in this release. Organisations must not create self-asserted VES seals or present a verification status as an organisational rating.</p>
+  </PageFrame>}
 
-      <h2>What conformance means</h2>
-      <p>
-        Conformance to VES indicates that a system or process produces evidence
-        that satisfies the normative requirements of the standard. It is assessed
-        against the minimum evidence pack requirements, integrity mechanisms,
-        timestamping, and independent verifiability defined in the specification.
-      </p>
-
-      <h2>Conformance levels</h2>
-
-      <div className="conformance-levels">
-
-        <div className="conformance-level">
-          <p className="level-number">Level 01</p>
-          <p className="level-title">Foundational</p>
-          <p className="level-text">
-            Basic capture of decision-state elements with timestamping and
-            integrity mechanisms present but not consistently enforced.
-          </p>
-        </div>
-
-        <div className="conformance-level">
-          <p className="level-number">Level 02</p>
-          <p className="level-title">Structured</p>
-          <p className="level-text">
-            Consistent capture of evidence packs with defined structure,
-            repeatability, and integrity preservation across workflows.
-          </p>
-        </div>
-
-        <div className="conformance-level">
-          <p className="level-number">Level 03</p>
-          <p className="level-title">Defensible</p>
-          <p className="level-text">
-            Evidence is complete, sealed, independently verifiable, and capable
-            of surviving scrutiny with minimal reconstruction.
-          </p>
-        </div>
-
-      </div>
-
-      <h2>Important distinction</h2>
-
-      <div className="callout">
-        Conformance does not imply endorsement of a specific product. It indicates
-        that the evidentiary substrate and defensibility layer meet the
-        requirements defined by VES.
-      </div>
-
-    </PageFrame>
-  )
-}

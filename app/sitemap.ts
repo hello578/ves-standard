@@ -1,13 +1,9 @@
-import { MetadataRoute } from "next"
+import type { MetadataRoute } from "next"
+import { siteConfig } from "@/lib/site"
+
+const routes = ["", "/standard", "/specification", "/interoperability", "/verify", "/examples/claims-referral", "/implement", "/conformance", "/governance", "/changelog", "/faq", "/cite"]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://vesstandard.org"
-
-  return [
-    { url: `${baseUrl}/`, lastModified: new Date() },
-    { url: `${baseUrl}/specification`, lastModified: new Date() },
-    { url: `${baseUrl}/versions`, lastModified: new Date() },
-    { url: `${baseUrl}/cite`, lastModified: new Date() },
-    { url: `${baseUrl}/stewardship`, lastModified: new Date() },
-  ]
+  return routes.map((route) => ({ url: `${siteConfig.url}${route}`, lastModified: new Date("2026-09-18"), changeFrequency: route === "" ? "monthly" : "yearly", priority: route === "" ? 1 : route === "/standard" || route === "/specification" ? 0.9 : 0.7 }))
 }
+

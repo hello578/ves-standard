@@ -1,39 +1,9 @@
+import type { Metadata } from "next"
+import { PageFrame } from "../components/page-frame"
 
-// app/cookies/page.tsx
+export const metadata: Metadata = { title: "Cookies", description: "Cookie information for vesstandard.org.", alternates: { canonical: "/cookies" } }
+export default function CookiesPage(){return <PageFrame eyebrow="Legal" title="Cookie notice" intro="VESstandard.org does not use advertising, profiling or optional analytics cookies.">
+  <h2>Essential operation</h2><p>The public site does not intentionally set non-essential cookies. Hosting and security infrastructure may process limited request metadata needed to deliver and protect the service.</p>
+  <h2>Structural verification</h2><p>The browser-only verification demonstration does not require an account or cookie. Submitted JSON is not sent to a VES evidence service.</p>
+  </PageFrame>}
 
-export default function CookiesPage() {
-  return (
-    <main style={{ maxWidth: 720, margin: "4rem auto", padding: "0 1rem" }}>
-      <h1>Cookie Notice</h1>
-
-      <p>
-        This site publishes the Veriscopic Evidence Standard (VES) and related
-        reference material. It does not use cookies for advertising, analytics,
-        or behavioural tracking.
-      </p>
-
-      <h2>Essential Cookies</h2>
-
-      <p>
-        No non-essential cookies are used on this site. Any cookies that may be
-        present are limited to those strictly necessary for the basic operation
-        and delivery of the site by underlying hosting infrastructure.
-      </p>
-
-      <h2>Demonstrative Consent Interaction</h2>
-
-      <p>
-        Where a consent interaction is presented, it exists solely as a
-        demonstrative example of evidence-based consent capture. The interaction
-        is intended to illustrate how consent may be recorded as evidence at the
-        moment it is exercised, in accordance with the Veriscopic Evidence
-        Standard.
-      </p>
-
-      <p>
-        The presence of this interaction does not imply the use of non-essential
-        cookies or tracking technologies.
-      </p>
-    </main>
-  )
-}

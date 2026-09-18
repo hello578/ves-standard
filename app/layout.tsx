@@ -1,68 +1,33 @@
-// app/layout.tsx
 import type { Metadata } from "next"
 import { Header } from "./components/header"
 import { Footer } from "./components/footer"
+import { siteConfig } from "@/lib/site"
 import "./globals.css"
-import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vesstandard.org"),
-  title: {
-    default: "Veriscopic Evidence Standard (VES)",
-    template: "%s | Veriscopic Evidence Standard",
-  },
-  description:
-    "The Veriscopic Evidence Standard (VES) defines how decision-state evidence can be captured, preserved, sealed, and independently verified at the point a consequential judgement is exercised.",
-  applicationName: "Veriscopic Evidence Standard",
-  keywords: [
-    "Veriscopic Evidence Standard",
-    "VES",
-    "decision-state evidence",
-    "governance evidence",
-    "defensibility",
-    "audit evidence",
-    "AI governance",
-    "independent verification",
-    "consequential decisions",
-  ],
-  openGraph: {
-    title: "Veriscopic Evidence Standard (VES)",
-    description:
-      "A published standard for capturing and verifying decision-state evidence.",
-    url: "https://vesstandard.org",
-    siteName: "Veriscopic Evidence Standard",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
+  metadataBase: new URL(siteConfig.url),
+  title: { default: `${siteConfig.name} (VES)`, template: `%s | VES` },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  alternates: { canonical: "/" },
+  keywords: ["Verifiable Evidence Standard", "VES", "decision evidence", "insurance", "decision-state", "evidence integrity"],
+  openGraph: { title: siteConfig.name, description: siteConfig.description, url: siteConfig.url, siteName: siteConfig.name, type: "website" },
+  twitter: { card: "summary", title: siteConfig.name, description: siteConfig.description },
+  robots: { index: true, follow: true },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const organizationJsonLd = { "@context": "https://schema.org", "@type": "Organization", name: "Veriscopic", url: "https://veriscopic.com" }
+const websiteJsonLd = { "@context": "https://schema.org", "@type": "WebSite", name: siteConfig.name, alternateName: "VES", url: siteConfig.url, description: siteConfig.description }
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>
-        <div className="site-shell">
-          <Header />
-          {children}
-          <Footer />
-        </div>
-
-        {/* CONSENT SCRIPT */}
-        <script
-           src="https://www.veriscopic.com/consent-client.js?v=3"
-          data-veriscopic-site="cf836bbb-1e43-4ea2-8c1a-7bb4175ba72a"
-          data-veriscopic-show-mark="true"
-          data-veriscopic-persistent-mark="true"
-          data-veriscopic-record-url="https://www.veriscopic.com/consent-evidence"
-          defer
-        />
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <div className="site-shell"><Header /><div id="main-content">{children}</div><Footer /></div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       </body>
-      <Analytics/>
     </html>
   )
 }

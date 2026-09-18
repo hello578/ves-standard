@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vesstandard.org/schemas/ves-decision-envelope-1.2-draft.schema.json",
+  "title": "VES Decision Envelope 1.2 Draft",
+  "description": "A portable point-in-time evidence envelope for one consequential organisational decision.",
+  "type": "object",
+  "required": ["ves_version", "decision_id", "decision_type", "decision_timestamp", "decision_subject", "decision_context", "governing_conditions", "business_authority", "system_contribution", "human_judgement", "outcome", "profile", "evidence", "verification"],
+  "properties": {
+    "ves_version": { "const": "1.2-draft" },
+    "decision_id": { "type": "string", "format": "uuid" },
+    "decision_type": { "type": "string", "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)+$" },
+    "decision_timestamp": { "type": "string", "format": "date-time" },
+    "decision_subject": {
+      "type": "object", "required": ["reference", "reference_type"],
+      "properties": { "reference": { "type": "string", "minLength": 6 }, "reference_type": { "type": "string", "minLength": 2 } }, "additionalProperties": false
+    },
+    "decision_context": { "$ref": "#/$defs/declaredComponent" },
+    "governing_conditions": { "$ref": "#/$defs/declaredComponent" },
+    "business_authority": { "$ref": "#/$defs/declaredComponent" },
+    "system_contribution": { "$ref": "#/$defs/declaredComponent" },
+    "human_judgement": { "$ref": "#/$defs/declaredComponent" },
+    "outcome": {
+      "type": "object", "required": ["code", "commitment"],
+      "properties": { "code": { "type": "string", "minLength": 1 }, "commitment": { "type": "string", "minLength": 1 }, "effective_at": { "type": ["string", "null"], "format": "date-time" } }, "additionalProperties": false
+    },
+    "profile": { "type": "string", "enum": ["ves.core.1.2-draft", "ves.insurance.claims-referral.1.2-draft"] },
+    "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "https://vesstandard.org/schemas/ves-external-evidence-object-1.2-draft.schema.json" } },
+    "verification": {
+      "type": "object", "required": ["declared_at", "profile", "overall_status", "dimensions", "limitations"],
+      "properties": {
+        "declared_at": { "type": "string", "format": "date-time" },
+        "profile": { "type": "string" },
+        "overall_status": { "$ref": "#/$defs/status" },
+        "dimensions": { "type": "object", "required": ["source_conformance", "integrity_and_provenance", "temporal_applicability", "business_authority", "structural_completeness", "replayability"], "additionalProperties": { "$ref": "#/$defs/status" } },
+        "limitations": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+      }, "additionalProperties": false
+    },
+    "extensions": { "type": "object", "propertyNames": { "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)+$" }, "additionalProperties": true }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "status": { "type": "string", "enum": ["Verified", "Qualified", "Incomplete", "Indeterminate", "Failed"] },
+    "declaredComponent": {
+      "type": "object", "required": ["summary", "evidence_ids"],
+      "properties": { "summary": { "type": "string", "minLength": 1 }, "evidence_ids": { "type": "array", "items": { "type": "string", "format": "uuid" }, "uniqueItems": true } }, "additionalProperties": false
+    }
+  }
+}
+

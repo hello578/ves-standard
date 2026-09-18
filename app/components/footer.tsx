@@ -1,72 +1,31 @@
-
-// app/components/footer.tsx
-// app/components/footer.tsx
 import Link from "next/link"
+import { namingClarification } from "@/lib/site"
+
+const groups = [
+  ["Standard", [["Standard", "/standard"], ["Specification", "/specification"], ["Interoperability", "/interoperability"], ["Conformance", "/conformance"]]],
+  ["Resources", [["Verify", "/verify"], ["Implement", "/implement"], ["Claims example", "/examples/claims-referral"], ["FAQ", "/faq"]]],
+  ["Stewardship", [["Governance", "/governance"], ["Changelog", "/changelog"], ["Cite VES", "/cite"], ["Veriscopic", "https://veriscopic.com"]]],
+] as const
 
 export function Footer() {
   return (
     <footer className="site-footer">
       <div className="container">
-
-        <div className="footer-grid">
-
-          {/* BRAND COL */}
-          <div className="footer-brand">
-            <div className="footer-brand-mark">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo-ves.svg" alt="VES" className="footer-brand-logo" />
-            </div>
-            <p className="footer-brand-desc">
-              A published standard for capturing, preserving, and independently
-              verifying decision-state evidence.
-            </p>
+        <div className="footer-top">
+          <div className="footer-statement"><span className="brand-mark" aria-hidden="true">V</span><p>The Verifiable Evidence Standard preserves the basis of consequential decisions for later independent review.</p></div>
+          <div className="footer-nav">
+            {groups.map(([title, links]) => (
+              <div key={title}>
+                <p className="footer-label">{title}</p>
+                {links.map(([label, href]) => href.startsWith("http") ? <a key={href} href={href} target="_blank" rel="noreferrer">{label}</a> : <Link key={href} href={href}>{label}</Link>)}
+              </div>
+            ))}
           </div>
-
-          {/* STANDARD */}
-          <div>
-            <p className="footer-col-label">Standard</p>
-            <div className="footer-links">
-              <Link href="/specification">Specification</Link>
-              <Link href="/conformance">Conformance</Link>
-              <Link href="/versions">Versions</Link>
-            </div>
-          </div>
-
-          {/* REFERENCE */}
-          <div>
-            <p className="footer-col-label">Reference</p>
-            <div className="footer-links">
-              <Link href="/concepts">Concepts</Link>
-              <Link href="/cite">Citation</Link>
-              <Link href="/stewardship">Stewardship</Link>
-            </div>
-          </div>
-
-          {/* STEWARD */}
-          <div>
-            <p className="footer-col-label">Steward</p>
-            <div className="footer-links">
-              <a href="https://veriscopic.com" target="_blank" rel="noopener noreferrer">
-                Veriscopic
-              </a>
-            </div>
-          </div>
-
         </div>
-
-        {/* BOTTOM RULE */}
-        <div className="footer-bottom">
-          <span className="footer-bottom-left">
-            © 2026 Veriscopic™ · All rights reserved
-          </span>
-          <span className="footer-bottom-right">
-            <Link href="/privacy">Privacy</Link>
-            {" · "}
-            <Link href="/consent">Consent</Link>
-          </span>
-        </div>
-
+        <p className="footer-note">{namingClarification}</p>
+        <div className="footer-bottom"><span>VES 1.2 Draft · Stewarded by Veriscopic</span><span><Link href="/privacy">Privacy</Link> · <Link href="/cookies">Cookies</Link> · © 2026 Veriscopic</span></div>
       </div>
     </footer>
   )
 }
+

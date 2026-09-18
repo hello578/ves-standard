@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vesstandard.org/schemas/ves-external-evidence-object-1.2-draft.schema.json",
+  "title": "VES External Evidence Object 1.2 Draft",
+  "description": "A public wrapper describing native evidence used by a VES Decision Envelope without replacing the native evidence format.",
+  "type": "object",
+  "required": ["ves_version", "evidence_id", "type", "source", "captured_at", "applicability", "integrity", "decision_relation", "limitations"],
+  "properties": {
+    "ves_version": { "const": "1.2-draft", "description": "VES version defining this wrapper." },
+    "evidence_id": { "type": "string", "format": "uuid", "description": "Opaque identifier for this evidence wrapper." },
+    "type": { "type": "string", "enum": ["runtime_receipt", "policy_excerpt", "authority_record", "claim_document", "human_review", "external_data", "other"], "description": "Public evidence class." },
+    "source": {
+      "type": "object",
+      "required": ["system", "issuer"],
+      "properties": {
+        "system": { "type": "string", "minLength": 1 },
+        "standard": { "type": ["string", "null"] },
+        "standard_version": { "type": ["string", "null"] },
+        "issuer": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "captured_at": { "type": "string", "format": "date-time" },
+    "applicability": {
+      "type": "object",
+      "required": ["from", "to"],
+      "properties": { "from": { "type": "string", "format": "date-time" }, "to": { "type": ["string", "null"], "format": "date-time" } },
+      "additionalProperties": false
+    },
+    "integrity": {
+      "type": "object",
+      "required": ["algorithm", "digest"],
+      "properties": {
+        "algorithm": { "type": "string", "enum": ["sha-256", "sha-384", "sha-512", "external"] },
+        "digest": { "type": "string", "minLength": 8, "description": "Digest or redacted example value." },
+        "verification_reference": { "type": ["string", "null"], "format": "uri" }
+      },
+      "additionalProperties": false
+    },
+    "decision_relation": { "type": "string", "enum": ["relied_on", "governed_by", "produced_by", "reviewed_by", "supports", "contextual"] },
+    "reference": { "type": ["string", "null"], "description": "Opaque retrieval or manifest reference; it need not be a public URL." },
+    "limitations": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "extensions": { "$ref": "#/$defs/extensions" }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "extensions": {
+      "type": "object",
+      "description": "Extension keys must be reverse-domain or similarly controlled namespaces.",
+      "propertyNames": { "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)+$" },
+      "additionalProperties": true
+    }
+  }
+}
+

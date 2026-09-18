@@ -1,38 +1,14 @@
+import type { ReactNode } from "react"
+import Link from "next/link"
 
-// app/components/page-frame.tsx
+type Props = { eyebrow?: string; title: string; intro: string; children: ReactNode; toc?: { id: string; label: string }[] }
 
-
-import { ReactNode } from "react"
-
-type Props = {
-  eyebrow?: string
-  title: string
-  intro: string
-  children: ReactNode
-}
-
-export function PageFrame({ eyebrow, title, intro, children }: Props) {
+export function PageFrame({ eyebrow, title, intro, children, toc }: Props) {
   return (
     <main>
-
-      {/* PAGE HERO — eyebrow, title, intro */}
-      <section className="page-hero">
-        <div className="container">
-          {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-          <h1>{title}</h1>
-          <p>{intro}</p>
-        </div>
-      </section>
-
-      {/* PAGE CONTENT — body prose */}
-      <section className="page-content">
-        <div className="container">
-          <div className="prose">
-            {children}
-          </div>
-        </div>
-      </section>
-
+      <section className="page-hero"><div className="container page-hero-grid"><div>{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1><p>{intro}</p></div><div className="page-version"><span>Current publication</span><strong>VES 1.2 Draft</strong><Link href="/changelog">View changes →</Link></div></div></section>
+      <section className="page-content"><div className={`container content-layout ${toc?.length ? "with-toc" : ""}`}>{toc?.length ? <aside className="toc"><p>On this page</p>{toc.map((item) => <a key={item.id} href={`#${item.id}`}>{item.label}</a>)}</aside> : null}<article className="prose">{children}</article></div></section>
     </main>
   )
 }
+

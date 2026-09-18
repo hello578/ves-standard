@@ -1,291 +1,50 @@
-// app/page.tsx
-
+import type { Metadata } from "next"
 import Link from "next/link"
+import { DecisionEnvelopeDiagram } from "./components/decision-envelope-diagram"
+import { MotionReveal } from "./components/motion-reveal"
+import { Section } from "./components/section"
+import { audiences, envelopeComponents, maturityLevels } from "@/content/standard"
+
+export const metadata: Metadata = { alternates: { canonical: "/" } }
 
 export default function HomePage() {
   return (
     <main>
-
-      {/* ══════════════════════════════
-          HERO
-      ══════════════════════════════ */}
       <section className="hero">
-        <div className="container">
-
-          <div className="hero-diagram">
-            <img
-              src="/images/ves-f1-decision-evidence-stack.svg"
-              alt="VES-F1 — The Veriscopic Decision Evidence Stack"
-              className="diagram-img"
-            />
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow">VES 1.2 Draft · Stewarded by Veriscopic</p>
+            <h1>Verifiable evidence for consequential decisions.</h1>
+            <p className="hero-lead">The Verifiable Evidence Standard defines how the evidence, authority, governing conditions, system outputs and judgement behind a consequential decision can be preserved as a portable, independently verifiable decision-state.</p>
+            <p className="hero-support">Valid evidence is not always sufficient decision evidence.</p>
+            <div className="hero-actions"><Link href="/standard" className="button button-primary">Read the standard</Link><Link href="/examples/claims-referral" className="button button-secondary">Explore an example</Link></div>
           </div>
-
-          <div className="hero-text">
-            <p className="eyebrow">VES Framework Model</p>
-
-            <h1>
-              The Veriscopic<br />
-              Decision Evidence Stack
-            </h1>
-
-            <p className="hero-lead">
-              A standard defining how operational decisions become{" "}
-              <span className="text-strong">verifiable evidence</span>{" "}
-              under scrutiny.
-            </p>
-
-            <p className="hero-subtle">
-              Decisions are not tested when they are made — they are tested when they are challenged.
-            </p>
-
-            <div className="hero-actions">
-              <Link href="/specification" className="btn btn-primary">
-                View specification
-              </Link>
-              <Link href="/certification" className="btn btn-ghost">
-                Certification
-              </Link>
-              <Link href="/verify" className="btn btn-ghost">
-                Verify a record
-              </Link>
-            </div>
-          </div>
-
+          <MotionReveal className="hero-instrument" delay={0.08}><DecisionEnvelopeDiagram /></MotionReveal>
         </div>
       </section>
 
-      {/* ══════════════════════════════
-          AUTHORITY
-      ══════════════════════════════ */}
-      <section className="section section-divider">
-        <div className="container">
-          <div className="card-framed">
-
-            <h2>Authority of the standard</h2>
-
-            <p>
-              VES defines the structural requirements for{" "}
-              <span className="text-strong">decision-state evidence</span> in systems
-              subject to audit, dispute, or regulatory scrutiny.
-            </p>
-
-            <ul className="list">
-              <li>How decision-state must be captured</li>
-              <li>How records must be sealed</li>
-              <li>How evidence must be independently verified</li>
-            </ul>
-
-            <p className="text-muted">
-              Systems that do not produce VES-compliant records cannot provide independently verifiable evidence.
-            </p>
-
-          </div>
+      <Section eyebrow="The 60-second explanation" title="Preserve the decision, not just the activity." intro="A consequential decision is rarely contained in one system. VES links the material evidence into a portable point-in-time envelope without replacing the systems that produced it.">
+        <div className="split-comparison">
+          <div><p className="comparison-label">VES is</p><ul className="check-list"><li>A standard for preserving consequential decision evidence</li><li>A portable decision envelope</li><li>Applicable to human, rules, workflow and AI-assisted decisions</li><li>A way to verify a declared evidence package later</li></ul></div>
+          <div><p className="comparison-label muted-label">VES is not</p><ul className="cross-list"><li>A runtime control gateway</li><li>A replacement for source systems</li><li>A guarantee that a decision is correct or compliant</li><li>A generic activity log or model register</li></ul></div>
         </div>
-      </section>
+      </Section>
 
-      {/* ══════════════════════════════
-          INTERPRETATION
-      ══════════════════════════════ */}
-      <section className="section section-divider">
-        <div className="container">
+      <Section eyebrow="Public model" title="The VES Decision Envelope" intro="Nine public components establish what was decided, what applied, who or what contributed, and how the resulting package can be checked later." className="section-tint">
+        <div className="component-grid">{envelopeComponents.map((item, index) => <MotionReveal key={item.key} delay={Math.min(index * 0.025, 0.16)}><article className="component-card"><span>{item.key}</span><h3>{item.title}</h3><p>{item.description}</p></article></MotionReveal>)}</div>
+        <div className="section-link"><Link href="/specification">Read the technical specification <span aria-hidden="true">→</span></Link></div>
+      </Section>
 
-          <div className="grid-2">
-            <div className="card">
-              <h3>Decision-state is evidentiary</h3>
-              <p>
-                What existed at the moment a decision was executed determines defensibility.
-              </p>
-            </div>
+      <Section eyebrow="Decision-Evidence Maturity" title="A progression from recollection to preserved state." intro="The levels describe evidence maturity. They are not certification grades and do not determine whether a decision was correct.">
+        <div className="maturity-grid">{maturityLevels.map(([level, title, description]) => <article key={level} className="maturity-card"><span>{level}</span><h3>{title}</h3><p>{description}</p></article>)}</div>
+      </Section>
 
-            <div className="card">
-              <h3>Reconstruction is insufficient</h3>
-              <p>
-                Logs, documents, and system traces cannot reliably reproduce decision conditions.
-              </p>
-            </div>
-          </div>
+      <Section eyebrow="Insurance applications" title="One evidence model across consequential workflows." intro="VES applies wherever an organisational commitment may later need to be understood, tested or replayed.">
+        <div className="audience-grid">{audiences.map(([title, description]) => <article key={title}><h3>{title}</h3><p>{description}</p></article>)}</div>
+      </Section>
 
-        </div>
-      </section>
-
-      {/* ══════════════════════════════
-          ADMISSIBILITY
-      ══════════════════════════════ */}
-      <section className="section section-divider">
-        <div className="container">
-
-          <div className="section-header">
-            <h2>Admissibility of evidence</h2>
-          </div>
-
-          <div className="grid-4">
-
-            <div className="card">
-              <h3>VES-L4</h3>
-              <p className="text-strong">Sealed Decision-State</p>
-              <p>Captured at execution, sealed, timestamped</p>
-            </div>
-
-            <div className="card">
-              <h3>VES-L3</h3>
-              <p className="text-strong">System Records</p>
-              <p>Logs and telemetry</p>
-            </div>
-
-            <div className="card">
-              <h3>VES-L2</h3>
-              <p className="text-strong">Documentation</p>
-              <p>Reports and approvals</p>
-            </div>
-
-            <div className="card">
-              <h3>VES-L1</h3>
-              <p className="text-strong">Narrative</p>
-              <p>Post-hoc reconstruction</p>
-            </div>
-
-          </div>
-
-          <p className="text-muted center-text">
-            Only VES-L4 provides deterministic proof of decision conditions.
-          </p>
-
-        </div>
-      </section>
-
-      {/* ══════════════════════════════
-          STRUCTURE
-      ══════════════════════════════ */}
-      <section className="section section-divider">
-        <div className="container">
-
-          <div className="section-header">
-            <h2>Structure of the standard</h2>
-          </div>
-
-          <div className="grid-3">
-            <div className="card">
-              <h3>Operational layer</h3>
-              <p>Where decisions are formed and executed.</p>
-            </div>
-
-            <div className="card">
-              <h3>Evidence layer</h3>
-              <p>Where decision-state becomes a tamper-resistant record.</p>
-            </div>
-
-            <div className="card">
-              <h3>Scrutiny layer</h3>
-              <p>Where evidence is tested under audit and dispute.</p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ══════════════════════════════
-          CERTIFICATION + BADGES
-      ══════════════════════════════ */}
-      <section className="section section-divider">
-        <div className="container">
-
-          <div className="section-header center-text">
-            <h2>VES Certification & Marks</h2>
-            <p className="text-muted">
-              Certification reflects the ability to produce verifiable decision-state evidence under scrutiny.
-            </p>
-          </div>
-
-          <div className="ves-badges">
-
-            <div className="ves-badge">
-              <img src="/images/ves-badge-anchored.png" alt="VES Anchored" />
-              <p className="badge-title">Anchored</p>
-              <p className="badge-desc">Sealed + independently timestamped</p>
-            </div>
-
-            <div className="ves-badge">
-              <img src="/images/ves-badge-sealed.png" alt="VES Sealed" />
-              <p className="badge-title">Sealed</p>
-              <p className="badge-desc">Full decision-state captured at execution</p>
-            </div>
-
-            <div className="ves-badge">
-              <img src="/images/ves-badge-platinum.png" alt="VES Platinum" />
-              <p className="badge-title">Platinum</p>
-              <p className="badge-desc">Continuous, litigation-grade evidence chain</p>
-            </div>
-
-          </div>
-
-          <div className="ves-verified">
-            <p className="badge-title">Verified</p>
-            <p className="badge-desc">Structured decision records present</p>
-          </div>
-
-          <div className="center-text" style={{ marginTop: "32px" }}>
-            <Link href="/certification" className="btn btn-primary">
-              View certification framework
-            </Link>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ══════════════════════════════
-          REGULATORY
-      ══════════════════════════════ */}
-      <section className="section section-divider">
-        <div className="container">
-
-          <div className="card-framed">
-
-            <h2>Regulatory alignment</h2>
-
-            <ul className="list">
-              <li>EU AI Act — record keeping and traceability</li>
-              <li>DORA — operational resilience and auditability</li>
-              <li>Digital Services Act — decision accountability</li>
-              <li>Supervisory and litigation contexts</li>
-            </ul>
-
-            <p className="text-muted">
-              VES provides the evidence layer governance frameworks rely on.
-            </p>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ══════════════════════════════
-          CTA
-      ══════════════════════════════ */}
-      <section className="section section-divider">
-        <div className="container">
-
-          <div className="grid-3">
-
-            <div className="card">
-              <h3>Specification</h3>
-              <Link href="/specification">Open →</Link>
-            </div>
-
-            <div className="card">
-              <h3>Certification</h3>
-              <Link href="/certification">Explore →</Link>
-            </div>
-
-            <div className="card">
-              <h3>Verify</h3>
-              <Link href="/verify">Validate →</Link>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
+      <section className="closing-cta"><div className="container"><p className="eyebrow">Implementation-neutral by design</p><h2>Start with the public schema and a worked claims referral.</h2><div><Link href="/implement" className="button button-light">Implementation guide</Link><Link href="/verify" className="text-link">Open the verifier demo →</Link></div></div></section>
     </main>
   )
 }
+

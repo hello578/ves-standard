@@ -1,18 +1,25 @@
+# The Verifiable Evidence Standard
 
+Public website and implementation artefacts for VES 1.2 Draft, stewarded by Veriscopic.
 
-This repository intentionally avoids build tooling and runtime dependencies
-beyond what is required to publish the specification.
+VES defines how the evidence, authority, governing conditions, system outputs and human judgement behind a consequential organisational decision can be preserved as a portable, independently verifiable decision-state.
 
-# Veriscopic Evidence Standard (VES)
+## Development
 
-Canonical specification site for the Veriscopic Evidence Standard (VES).
+```bash
+npm install
+npm run dev
+```
 
-This repository contains the published specification and reference pages
-for VES, a standard for capturing and verifying evidence of judgement
-at the moment it is exercised.
+Quality checks:
 
-VES is intended to support situations where decisions may be subject
-to retrospective scrutiny, including audit, regulatory review,
-insurance assessment, legal inquiry, or board-level accountability.
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
 
-The standard is stewarded by Veriscopic.
+The site is static-first. It has no database, authentication, upload path or server-side evidence storage. The `/verify` demonstration validates JSON structure in the browser and does not verify signatures or retrieve external evidence.
+
+See [SCHEMAS.md](./SCHEMAS.md) for the public schema and test-vector semantics.
+

@@ -1,35 +1,12 @@
-// cite/page.tsx
-
+import type { Metadata } from "next"
 import { PageFrame } from "../components/page-frame"
 
-export default function CitePage() {
-  return (
-    <PageFrame
-      eyebrow="Reference Format"
-      title="Citation"
-      intro="This page provides recommended citation formats for referencing the Veriscopic Evidence Standard (VES) in policy documents, procurement materials, reports, assessment outputs, academic references, and evidence-related documentation."
-    >
-      <h2>Recommended citation</h2>
-      <pre>{`Veriscopic. (2026). Veriscopic Evidence Standard (VES), Version 1.0. https://vesstandard.org`}</pre>
+export const metadata: Metadata = { title: "Cite VES", description: "Canonical citation and permanent-link rules for VES 1.2 Draft.", alternates: { canonical: "/cite" } }
+export default function CitePage(){return <PageFrame eyebrow="Permanent reference" title="Cite VES" intro="Pin the version and draft status when referencing the standard, schema or a VES profile.">
+  <h2>Recommended citation</h2><pre>{`Veriscopic. (2026). The Verifiable Evidence Standard (VES), Version 1.2 Draft. https://vesstandard.org/standard`}</pre>
+  <h2>Short citation</h2><pre>{`The Verifiable Evidence Standard (VES) 1.2 Draft`}</pre>
+  <h2>Schema identifiers</h2><pre>{`https://vesstandard.org/schemas/ves-decision-envelope-1.2-draft.schema.json
+https://vesstandard.org/schemas/ves-external-evidence-object-1.2-draft.schema.json`}</pre>
+  <h2>Version pinning</h2><p>Evidence packages, implementation statements and technical reviews should cite the exact VES version and applicable profile. The unversioned website describes the current publication and should not be used to rewrite the meaning of a historical envelope.</p>
+  </PageFrame>}
 
-      <h2>Short citation</h2>
-      <pre>{`Veriscopic Evidence Standard (VES) v1.0`}</pre>
-
-      <h2>Version pinning</h2>
-      <p>
-        Where evidence is assessed over time, references SHOULD specify the
-        applicable VES version. This is particularly important where a decision,
-        evidence record, or dispute spans multiple periods.
-      </p>
-
-      <h2>Suggested usage contexts</h2>
-      <ul>
-        <li>internal governance and audit documentation</li>
-        <li>evidence framework references</li>
-        <li>AI governance or consequential decision policy materials</li>
-        <li>vendor and procurement requirements</li>
-        <li>research, analysis, or academic citation</li>
-      </ul>
-    </PageFrame>
-  )
-}

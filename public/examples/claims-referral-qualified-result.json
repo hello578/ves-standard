@@ -1,0 +1,19 @@
+{
+  "ves_version": "1.2-draft",
+  "result_id": "018f0d4e-7b3a-7c11-a75f-3d13ec33b001",
+  "decision_id": "018f0d4e-7b3a-7c11-a75f-3d13ec33aff1",
+  "profile": "ves.insurance.claims-referral.1.2-draft",
+  "assessed_at": "2026-09-18T11:00:00Z",
+  "overall_status": "Qualified",
+  "dimensions": [
+    { "name": "Source conformance", "status": "Verified", "note": "Declared public source structures are present." },
+    { "name": "Integrity and provenance", "status": "Qualified", "note": "Digest declarations are present; this static demonstration does not verify signatures." },
+    { "name": "Temporal applicability", "status": "Verified", "note": "Decision and applicability timestamps are structurally present." },
+    { "name": "Business authority", "status": "Indeterminate", "note": "The delegated authority record was not independently retrieved." },
+    { "name": "Structural completeness", "status": "Qualified", "note": "Required public components are present with an authority limitation." },
+    { "name": "Replayability", "status": "Qualified", "note": "Opaque manifest references are present; external retrieval is outside this demonstration." }
+  ],
+  "limitations": ["Structural validation only — signatures were not verified and external evidence was not retrieved.", "A valid runtime receipt alone does not establish business authority or a complete decision-state."],
+  "fictional": true
+}
+
