@@ -6,21 +6,21 @@
   "type": "object",
   "required": ["ves_version", "evidence_id", "type", "source", "captured_at", "applicability", "integrity", "decision_relation", "limitations"],
   "properties": {
-    "ves_version": { "const": "1.2-draft", "description": "VES version defining this wrapper." },
+    "ves_version": { "type": "string", "const": "1.2-draft", "description": "VES version defining this wrapper." },
     "evidence_id": { "type": "string", "format": "uuid", "description": "Opaque identifier for this evidence wrapper." },
     "type": { "type": "string", "enum": ["runtime_receipt", "policy_excerpt", "authority_record", "claim_document", "human_review", "external_data", "other"], "description": "Public evidence class." },
     "source": {
       "type": "object",
       "required": ["system", "issuer"],
       "properties": {
-        "system": { "type": "string", "minLength": 1 },
-        "standard": { "type": ["string", "null"] },
-        "standard_version": { "type": ["string", "null"] },
-        "issuer": { "type": "string", "minLength": 1 }
+        "system": { "type": "string", "minLength": 1, "description": "Declared source system or service." },
+        "standard": { "type": ["string", "null"], "description": "Native source standard, when applicable." },
+        "standard_version": { "type": ["string", "null"], "description": "Pinned version of the native source standard or artefact." },
+        "issuer": { "type": "string", "minLength": 1, "description": "Declared issuer or originating authority." }
       },
       "additionalProperties": false
     },
-    "captured_at": { "type": "string", "format": "date-time" },
+    "captured_at": { "type": "string", "format": "date-time", "description": "Time at which this evidence reference or wrapper was captured." },
     "applicability": {
       "type": "object",
       "required": ["from", "to"],
@@ -37,7 +37,7 @@
       },
       "additionalProperties": false
     },
-    "decision_relation": { "type": "string", "enum": ["relied_on", "governed_by", "produced_by", "reviewed_by", "supports", "contextual"] },
+    "decision_relation": { "type": "string", "enum": ["relied_on", "governed_by", "produced_by", "reviewed_by", "supports", "contextual"], "description": "Declared relationship between the native evidence and the consequential decision." },
     "reference": { "type": ["string", "null"], "description": "Opaque retrieval or manifest reference; it need not be a public URL." },
     "limitations": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
     "extensions": { "$ref": "#/$defs/extensions" }
@@ -52,4 +52,3 @@
     }
   }
 }
-

@@ -23,6 +23,15 @@ export function Header() {
             <Link key={item.href} href={item.href} data-active={pathname === item.href || pathname.startsWith(`${item.href}/`)}>{item.label}</Link>
           ))}
         </nav>
+        <details className="version-menu">
+          <summary><span>Version</span> 1.2 Draft</summary>
+          <div>
+            <strong>VES 1.2 Draft</strong>
+            <small>Current publication · 18 September 2026</small>
+            <Link href="/changelog">Version history</Link>
+            <Link href="/cite">Permanent citation</Link>
+          </div>
+        </details>
         <Link href="/standard" className="header-cta">Read VES 1.2 <span aria-hidden="true">↗</span></Link>
         <button className="menu-button" type="button" aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen((value) => !value)}>
           <span aria-hidden="true">{open ? "×" : "≡"}</span>
@@ -33,6 +42,7 @@ export function Header() {
           <motion.nav id="mobile-nav" className="mobile-menu" aria-label="Mobile navigation" initial={reduceMotion ? false : { opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={reduceMotion ? undefined : { opacity: 0, y: -8 }} transition={{ duration: 0.18 }}>
             <div className="container">
               {primaryNavigation.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</Link>)}
+              <div className="mobile-version"><span>Current publication</span><strong>VES 1.2 Draft</strong><Link href="/changelog" onClick={() => setOpen(false)}>Version history</Link></div>
               <Link href="/standard" className="mobile-draft-link" onClick={() => setOpen(false)}>Read VES 1.2 Draft</Link>
             </div>
           </motion.nav>

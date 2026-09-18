@@ -5,7 +5,7 @@ import standaloneCode from "ajv/dist/standalone/index.js"
 
 const envelopeSchema = JSON.parse(await readFile(new URL("../public/schemas/ves-decision-envelope-1.2-draft.schema.json", import.meta.url), "utf8"))
 const evidenceSchema = JSON.parse(await readFile(new URL("../public/schemas/ves-external-evidence-object-1.2-draft.schema.json", import.meta.url), "utf8"))
-const exampleEnvelope = JSON.parse(await readFile(new URL("../public/examples/claims-referral-qualified.json", import.meta.url), "utf8"))
+const exampleEnvelope = JSON.parse(await readFile(new URL("../public/examples/fictional-claims-referral-qualified.json", import.meta.url), "utf8"))
 const ajv = new Ajv2020({ allErrors: true, strict: false, code: { source: true, esm: true } })
 addFormats(ajv)
 ajv.addSchema(evidenceSchema)

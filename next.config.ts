@@ -21,6 +21,8 @@ const nextConfig: NextConfig = {
       { source: "/stewardship", destination: "/governance", permanent: true },
       { source: "/versions", destination: "/changelog", permanent: true },
       { source: "/consent", destination: "/privacy", permanent: true },
+      { source: "/examples/claims-referral-qualified.json", destination: "/examples/fictional-claims-referral-qualified.json", permanent: true },
+      { source: "/examples/claims-referral-qualified-result.json", destination: "/examples/fictional-claims-referral-qualified-result.json", permanent: true },
     ]
   },
 }

@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   openGraph: { title: siteConfig.name, description: siteConfig.description, url: siteConfig.url, siteName: siteConfig.name, type: "website" },
   twitter: { card: "summary", title: siteConfig.name, description: siteConfig.description },
   robots: { index: true, follow: true },
+  other: {
+    "ves:version": "1.2-draft",
+    "ves:publication-status": "draft",
+    "ves:steward": "Veriscopic",
+  },
 }
 
 const organizationJsonLd = { "@context": "https://schema.org", "@type": "Organization", name: "Veriscopic", url: "https://veriscopic.com" }
