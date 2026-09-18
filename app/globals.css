@@ -128,6 +128,7 @@ h3 { font-size:1.08rem; letter-spacing:-.015em; }
 .definition-card span,.dimension-card span { color:var(--teal); font-family:var(--font-mono),monospace; font-size:.7rem; }
 .definition-card h3,.dimension-card h3,.status-card h3,.evidence-card h3 { margin:.75rem 0 .5rem; }
 .definition-card p,.dimension-card p,.status-card p,.evidence-card p { margin:0; color:var(--slate); font-size:.93rem; }
+.core-concepts { display:grid; gap:.75rem; margin:1.5rem 0; }.core-concepts>div { padding:1.15rem; border:1px solid var(--line); border-radius:.85rem; background:var(--surface); scroll-margin-top:6rem; }.core-concepts dt { margin-bottom:.5rem; font-weight:650; letter-spacing:-.015em; }.core-concepts dd { margin:0; color:var(--slate); font-size:.94rem; }.callout p:last-child { margin-bottom:0; }
 .status-pill { display:inline-flex; align-items:center; min-height:1.75rem; padding:.2rem .6rem; border:1px solid currentColor; border-radius:999px; font-family:var(--font-mono),monospace; font-size:.68rem; font-weight:650; }
 .status-verified { color:#17623e; background:#e4f4e9; }.status-qualified { color:#806012; background:#faf0cf; }.status-incomplete { color:#8a5422; background:#faeadc; }.status-indeterminate { color:#5c5f68; background:#eef0f3; }.status-failed { color:#8f2e2e; background:#f7e1e1; }
 .spec-table { width:100%; margin:1.5rem 0; border-collapse:collapse; font-size:.9rem; }
@@ -182,6 +183,7 @@ h3 { font-size:1.08rem; letter-spacing:-.015em; }
   .maturity-card:nth-child(n+3) { border-top:1px solid var(--line); }
   .audience-grid { grid-template-columns:repeat(2,1fr); column-gap:2rem; }
   .definition-grid,.dimension-grid,.status-grid,.evidence-grid { grid-template-columns:repeat(2,1fr); }
+  .core-concepts { grid-template-columns:repeat(2,1fr); }
   .footer-nav { grid-template-columns:repeat(3,1fr); }
   .footer-bottom { flex-direction:row; justify-content:space-between; }
 }

@@ -40,6 +40,59 @@ export const maturityLevels = [
   ["L4", "Preserved Decision-State", "A time-bound envelope preserves authority, conditions, human and system contribution, integrity data and a replay path."],
 ] as const
 
+export const coreConcepts = [
+  {
+    id: "decision-state",
+    term: "Decision-State",
+    definition: "The material evidence, authority, governing conditions, system contribution and judgement relevant to a consequential decision at the time the organisation committed to it.",
+  },
+  {
+    id: "execution-boundary",
+    term: "Execution Boundary",
+    definition: "The point at which a recommendation, analysis or workflow result becomes a consequential organisational commitment.",
+  },
+  {
+    id: "point-in-time-evidence",
+    term: "Point-in-Time Evidence",
+    definition: "Evidence captured at, or demonstrably applicable to, the execution boundary, before later change, hindsight or reconstruction alters the available picture.",
+  },
+  {
+    id: "decision-envelope",
+    term: "Decision Envelope",
+    definition: "A versioned, structured record that links a consequential decision to its relevant evidence objects, governing conditions, authority, system contribution, human judgement, commitment and verification information.",
+  },
+  {
+    id: "evidence-object",
+    term: "Evidence Object",
+    definition: "A source artefact or reference—such as a document, runtime receipt, authority record, model output, system event, external data source or human review—described with provenance, integrity and decision relevance.",
+  },
+  {
+    id: "evidentiary-continuity",
+    term: "Evidentiary Continuity",
+    definition: "The ability for decision-relevant evidence to remain intelligible and reviewable when responsibility, systems, people or organisations change.",
+  },
+  {
+    id: "reconstruction-burden",
+    term: "Reconstruction Burden",
+    definition: "The operational work required to reassemble why a consequential decision was made after its original decision-state has become fragmented, changed or unavailable.",
+  },
+  {
+    id: "reconstruction-gap",
+    term: "Reconstruction Gap",
+    definition: "The difference between the decision-state available at the time and what can later be assembled from surviving systems, documents and recollection.",
+  },
+  {
+    id: "independent-verification",
+    term: "Independent Verification",
+    definition: "The ability for a reviewer to assess the declared structure, integrity and provenance of a VES evidence package without relying solely on the originating user interface or an untested assertion.",
+  },
+  {
+    id: "decision-evidence-maturity",
+    term: "Decision-Evidence Maturity",
+    definition: "A capability continuum from L1 Narrative, through L2 Documentary and L3 Traceable, to L4 Preserved Decision-State.",
+  },
+] as const
+
 export const audiences = [
   ["Claims", "Preserve the basis of a settlement, referral or denial so later reviews do not begin with a forensic search."],
   ["Underwriting", "Bind risk decisions to the evidence, authority and governing conditions in force at acceptance."],
@@ -47,4 +100,3 @@ export const audiences = [
   ["Operational risk & assurance", "Review consequential decisions through a consistent, portable evidence structure."],
   ["Reinsurance", "Retain the decision evidence needed to examine coverage, authority and material conditions later."],
 ] as const
-

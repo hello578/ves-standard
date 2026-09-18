@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
   async headers() { return [{ source: "/(.*)", headers: securityHeaders }] },
   async redirects() {
     return [
-      { source: "/concepts", destination: "/standard", permanent: true },
+      { source: "/concepts", destination: "/standard#core-concepts", permanent: true },
       { source: "/framework-model", destination: "/standard", permanent: true },
       { source: "/reference/sample-record", destination: "/examples/claims-referral", permanent: true },
       { source: "/certification", destination: "/conformance", permanent: true },
