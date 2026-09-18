@@ -6,13 +6,13 @@ export type EnvelopeComponent = {
 
 export const envelopeComponents: EnvelopeComponent[] = [
   { key: "01", title: "Decision identity", description: "The decision type, opaque subject reference, outcome and execution time." },
-  { key: "02", title: "Decision context", description: "The material facts and source evidence available or relied upon." },
+  { key: "02", title: "Decision context", description: "The material facts and source evidence considered in relation to the decision, with their declared relationship—for example, available, relied upon, excluded or superseded." },
   { key: "03", title: "Governing conditions", description: "The policy, wording, rules, requirements or instructions applicable at the time." },
   { key: "04", title: "Business authority", description: "The role, delegated authority, limits and approval state at execution." },
   { key: "05", title: "System contribution", description: "Rules, models, workflows or external systems that materially influenced the decision." },
   { key: "06", title: "Human judgement", description: "Review, intervention, approval, override or rationale where applicable." },
   { key: "07", title: "Commitment", description: "The organisational outcome, including financial, contractual or customer consequence." },
-  { key: "08", title: "Evidence integrity", description: "References, hashes, signatures and declared provenance of evidence objects." },
+  { key: "08", title: "Evidence integrity", description: "References, hashes, signatures and declared provenance for Evidence Objects, where available." },
   { key: "09", title: "Verification", description: "The profile used, checks performed, result status and visible limitations." },
 ]
 
@@ -84,7 +84,7 @@ export const coreConcepts = [
   {
     id: "independent-verification",
     term: "Independent Verification",
-    definition: "The ability for a reviewer to assess the declared structure, integrity and provenance of a VES evidence package without relying solely on the originating user interface or an untested assertion.",
+    definition: "The ability for a reviewer to assess the declared structure, integrity, provenance and stated limitations of a VES Decision Envelope without relying solely on the originating user interface or an untested assertion.",
   },
   {
     id: "decision-evidence-maturity",

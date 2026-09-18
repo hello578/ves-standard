@@ -2,7 +2,7 @@ import Link from "next/link"
 import { namingClarification } from "@/lib/site"
 
 const groups = [
-  ["Standard", [["Standard", "/standard"], ["Specification", "/specification"], ["Interoperability", "/interoperability"], ["Conformance", "/conformance"]]],
+  ["Standard", [["Standard", "/standard"], ["Specification", "/specification"], ["Concepts", "/concepts"], ["Interoperability", "/interoperability"], ["Conformance", "/conformance"], ["Versions", "/versions"]]],
   ["Resources", [["Verify", "/verify"], ["Implement", "/implement"], ["Claims example", "/examples/claims-referral"], ["FAQ", "/faq"]]],
   ["Stewardship", [["Governance", "/governance"], ["Changelog", "/changelog"], ["Cite VES", "/cite"], ["Veriscopic", "https://veriscopic.com"]]],
 ] as const
@@ -28,4 +28,3 @@ export function Footer() {
     </footer>
   )
 }
-

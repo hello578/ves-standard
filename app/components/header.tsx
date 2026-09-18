@@ -4,7 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
-import { primaryNavigation } from "@/lib/site"
+import { primaryNavigation, siteConfig } from "@/lib/site"
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -27,8 +27,9 @@ export function Header() {
           <summary><span>Version</span> 1.2 Draft</summary>
           <div>
             <strong>VES 1.2 Draft</strong>
-            <small>Current publication · 18 September 2026</small>
-            <Link href="/changelog">Version history</Link>
+            <small>Latest draft · {siteConfig.draftPublicationDate}</small>
+            <p>VES {siteConfig.activeVersion} remains active and citable.</p>
+            <Link href="/versions">Version history</Link>
             <Link href="/cite">Permanent citation</Link>
           </div>
         </details>
@@ -42,7 +43,7 @@ export function Header() {
           <motion.nav id="mobile-nav" className="mobile-menu" aria-label="Mobile navigation" initial={reduceMotion ? false : { opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={reduceMotion ? undefined : { opacity: 0, y: -8 }} transition={{ duration: 0.18 }}>
             <div className="container">
               {primaryNavigation.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</Link>)}
-              <div className="mobile-version"><span>Current publication</span><strong>VES 1.2 Draft</strong><Link href="/changelog" onClick={() => setOpen(false)}>Version history</Link></div>
+              <div className="mobile-version"><span>Latest draft</span><strong>VES 1.2 Draft</strong><small>Published: {siteConfig.draftPublicationDate}</small><p>VES {siteConfig.activeVersion} remains active and citable.</p><Link href="/versions" onClick={() => setOpen(false)}>Version history</Link></div>
               <Link href="/standard" className="mobile-draft-link" onClick={() => setOpen(false)}>Read VES 1.2 Draft</Link>
             </div>
           </motion.nav>

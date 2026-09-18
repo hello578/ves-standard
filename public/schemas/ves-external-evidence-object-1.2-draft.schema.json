@@ -37,7 +37,7 @@
       },
       "additionalProperties": false
     },
-    "decision_relation": { "type": "string", "enum": ["relied_on", "governed_by", "produced_by", "reviewed_by", "supports", "contextual"], "description": "Declared relationship between the native evidence and the consequential decision." },
+    "decision_relation": { "type": "string", "enum": ["available", "relied_on", "excluded", "superseded", "governed_by", "produced_by", "reviewed_by", "supports", "contextual"], "description": "Declared relationship between the native evidence and the consequential decision, distinguishing evidence that was available, relied upon, excluded or superseded where applicable." },
     "reference": { "type": ["string", "null"], "description": "Opaque retrieval or manifest reference; it need not be a public URL." },
     "limitations": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
     "extensions": { "$ref": "#/$defs/extensions" }

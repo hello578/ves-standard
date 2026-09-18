@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   other: {
     "ves:version": "1.2-draft",
     "ves:publication-status": "draft",
+    "ves:active-version": "1.1",
     "ves:steward": "Veriscopic",
   },
 }
