@@ -8,5 +8,5 @@ export default function CitePage(){return <PageFrame eyebrow="Permanent referenc
   <h2>Short citation</h2><pre>{`The Verifiable Evidence Standard (VES) 1.2 Draft`}</pre>
   <h2>Schema identifiers</h2><pre>{`https://vesstandard.org/schemas/ves-decision-envelope-1.2-draft.schema.json
 https://vesstandard.org/schemas/ves-external-evidence-object-1.2-draft.schema.json`}</pre>
-  <h2>Version pinning</h2><p>Evidence packages, implementation statements and technical reviews should cite the exact VES version and applicable profile. VES 1.1 remains the current active, citable version. VES 1.2 Draft is published for implementation review and must be cited with its draft status.</p>
+  <h2>Version pinning</h2><p>Evidence packages, implementation statements and technical reviews should cite the exact VES version and applicable profile. VES 1.1 remains the current active, citable version. VES 1.2 Draft is published for implementation review and must be cited with its draft status. <a href="https://veriscopic.com">Veriscopic</a> is the steward of the published standard.</p>
   </PageFrame>}
