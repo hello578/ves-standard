@@ -2,11 +2,11 @@ export const siteConfig = {
   name: "The Verifiable Evidence Standard",
   shortName: "VES",
   version: "1.2 Draft",
-  draftPublicationDate: "2026-09-18",
+  draftPublicationDate: "2026-09-20",
   activeVersion: "1.1",
   url: "https://vesstandard.org",
   description:
-    "A public standard for preserving portable, independently verifiable evidence of consequential organisational decisions.",
+    "A published, implementation-neutral standard for preserving the basis of consequential organisational decisions.",
   steward: "Veriscopic",
 } as const
 
@@ -21,7 +21,7 @@ export const primaryNavigation = [
 ] as const
 
 export const verificationDisclaimer =
-  "VES verification assesses the integrity, declared provenance and structural completeness of an evidence package against a stated VES profile. It does not certify the underlying decision as correct, lawful, fair, compliant or complete in every respect."
+  "VES verification assesses the integrity, declared provenance and structural completeness of a submitted Decision Envelope against a stated VES profile. A verification result does not certify that the underlying decision was correct, lawful, fair, compliant or complete beyond the evidence submitted."
 
 export const namingClarification =
   "Naming clarification — 2026-09-18: the standard was previously expanded as “Veriscopic Evidence Standard.” It is now named the Verifiable Evidence Standard to describe the property the standard enables. Veriscopic remains its steward."

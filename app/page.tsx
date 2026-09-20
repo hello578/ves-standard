@@ -15,7 +15,7 @@ export default function HomePage() {
           <div className="hero-copy">
             <p className="eyebrow">VES 1.2 Draft · Stewarded by Veriscopic</p>
             <h1>Verifiable evidence for consequential decisions.</h1>
-            <p className="hero-lead">The Verifiable Evidence Standard defines how the evidence, authority, governing conditions, system outputs and judgement behind a consequential decision can be preserved as a portable, independently verifiable decision-state.</p>
+            <p className="hero-lead">VES is a published standard for preserving the evidence, authority, conditions, judgement and commitment behind consequential decisions, so they can be independently reviewed without reconstructing them later.</p>
             <p className="hero-support">Valid evidence is not always sufficient decision evidence.</p>
             <div className="hero-actions"><Link href="/standard" className="button button-primary">Read the standard</Link><Link href="/examples/claims-referral" className="button button-secondary">Explore an example</Link></div>
           </div>
@@ -24,9 +24,10 @@ export default function HomePage() {
       </section>
 
       <Section eyebrow="The 60-second explanation" title="Preserve the decision, not just the activity." intro="A consequential decision is rarely contained in one system. VES links the material evidence into a portable point-in-time envelope without replacing the systems that produced it.">
+        <div className="boundary-thesis"><strong>Different evidence answers different questions.</strong><p>Runtime records can show what a system did. Governance evidence can show how an organisation is controlled. VES addresses a different question: what evidence, authority, conditions, judgement and commitment formed the decision at the moment the organisation acted?</p></div>
         <div className="split-comparison">
           <div><p className="comparison-label">VES is</p><ul className="check-list"><li>A standard for preserving consequential decision evidence</li><li>A portable decision envelope</li><li>Applicable to human, rules, workflow and AI-assisted decisions</li><li>A way to verify a declared evidence package later</li></ul></div>
-          <div><p className="comparison-label muted-label">VES is not</p><ul className="cross-list"><li>A runtime control gateway</li><li>A replacement for source systems</li><li>A guarantee that a decision is correct or compliant</li><li>A generic activity log or model register</li></ul></div>
+          <div><p className="comparison-label muted-label">VES is not</p><ul className="cross-list"><li>A runtime-control receipt or gateway</li><li>An audit log or replacement for source systems</li><li>A governance maturity taxonomy</li><li>A certification that a decision was correct</li></ul></div>
         </div>
       </Section>
 
@@ -47,4 +48,3 @@ export default function HomePage() {
     </main>
   )
 }
-
