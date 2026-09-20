@@ -6,7 +6,7 @@ export const siteConfig = {
   activeVersion: "1.1",
   url: "https://vesstandard.org",
   description:
-    "A published, implementation-neutral standard for preserving the basis of consequential organisational decisions.",
+    "A published, implementation-neutral standard for preserving interoperable evidence, authority, conditions and judgement around consequential decisions.",
   steward: "Veriscopic",
 } as const
 

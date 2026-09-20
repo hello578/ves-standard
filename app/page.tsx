@@ -5,7 +5,11 @@ import { MotionReveal } from "./components/motion-reveal"
 import { Section } from "./components/section"
 import { audiences, envelopeComponents, maturityLevels } from "@/content/standard"
 
-export const metadata: Metadata = { alternates: { canonical: "/" } }
+export const metadata: Metadata = {
+  title: "Verifiable Evidence for Consequential Decisions",
+  description: "Preserve interoperable evidence, authority, conditions and judgement around consequential decisions for later independent review.",
+  alternates: { canonical: "/" },
+}
 
 export default function HomePage() {
   return (
