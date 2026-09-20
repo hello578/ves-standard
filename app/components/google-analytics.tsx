@@ -47,7 +47,7 @@ gtag('config', '${measurementId}');`}
     <aside className="analytics-consent" aria-label="Analytics preference">
       <div>
         <strong>Help improve VES</strong>
-        <p>With your permission, we use privacy-conscious analytics to understand which public standards pages are useful. No evidence packages are collected.</p>
+        <p>With your permission, we use optional analytics to understand which public standards pages are useful. No evidence packages are collected.</p>
       </div>
       <div className="analytics-consent-actions">
         <button type="button" className="button button-secondary" onClick={() => chooseConsent("denied")}>Decline</button>
