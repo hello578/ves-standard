@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Header } from "./components/header"
 import { Footer } from "./components/footer"
+import { GoogleAnalytics } from "./components/google-analytics"
 import { siteConfig } from "@/lib/site"
 import "./globals.css"
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div className="site-shell"><Header /><div id="main-content">{children}</div><Footer /></div>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+        <GoogleAnalytics />
       </body>
     </html>
   )
