@@ -1,8 +1,29 @@
 import type { MetadataRoute } from "next"
 import { siteConfig } from "@/lib/site"
 
-const routes = ["", "/1.2", "/standard", "/concepts", "/specification", "/interoperability", "/verify", "/examples/claims-referral", "/implement", "/conformance", "/governance", "/versions", "/changelog", "/faq", "/cite", "/terms-of-use"]
+const publicationDate = new Date("2026-09-21T00:00:00.000Z")
+
+const entries: Array<Pick<MetadataRoute.Sitemap[number], "url" | "priority" | "changeFrequency">> = [
+  { url: `${siteConfig.url}/`, priority: 1, changeFrequency: "monthly" },
+  { url: `${siteConfig.url}/1.2`, priority: 1, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/standard`, priority: 0.9, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/specification`, priority: 0.9, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/schemas/ves-decision-envelope-1.2.schema.json`, priority: 0.8, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/schemas/ves-external-evidence-object-1.2.schema.json`, priority: 0.8, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/versions`, priority: 0.7, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/changelog`, priority: 0.7, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/cite`, priority: 0.7, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/governance`, priority: 0.7, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/concepts`, priority: 0.6, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/interoperability`, priority: 0.6, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/verify`, priority: 0.6, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/implement`, priority: 0.6, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/conformance`, priority: 0.6, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/examples/claims-referral`, priority: 0.6, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/faq`, priority: 0.6, changeFrequency: "yearly" },
+  { url: `${siteConfig.url}/terms-of-use`, priority: 0.6, changeFrequency: "yearly" },
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({ url: `${siteConfig.url}${route}`, lastModified: new Date(siteConfig.publicationDate), changeFrequency: route === "" ? "monthly" : "yearly", priority: route === "" ? 1 : route === "/standard" || route === "/specification" ? 0.9 : 0.7 }))
+  return entries.map((entry) => ({ ...entry, lastModified: publicationDate }))
 }

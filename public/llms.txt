@@ -1,0 +1,31 @@
+# VES — Verifiable Evidence Standard
+
+VES is the Verifiable Evidence Standard, stewarded by Veriscopic.
+
+VES 1.2 is the current published version. It defines a stable public model for preserving and reviewing the evidence, authority, conditions, system contribution, human judgement and organisational commitment behind consequential decisions.
+
+Canonical release:
+https://vesstandard.org/1.2
+
+Important pages:
+- Standard: https://vesstandard.org/standard
+- Specification: https://vesstandard.org/specification
+- Concepts: https://vesstandard.org/concepts
+- Interoperability: https://vesstandard.org/interoperability
+- Verify: https://vesstandard.org/verify
+- Conformance: https://vesstandard.org/conformance
+- Versions: https://vesstandard.org/versions
+- Changelog: https://vesstandard.org/changelog
+- Cite VES: https://vesstandard.org/cite
+- Governance: https://vesstandard.org/governance
+- Terms of use: https://vesstandard.org/terms-of-use
+
+Schemas:
+- https://vesstandard.org/schemas/ves-decision-envelope-1.2.schema.json
+- https://vesstandard.org/schemas/ves-external-evidence-object-1.2.schema.json
+
+Important scope note:
+VES is a decision-evidence standard. It does not certify that a decision was correct, lawful, fair or compliant. Runtime records, governance evidence, audit logs and model records may become Evidence Objects inside a VES Decision Envelope, but they do not by themselves establish the full decision-state.
+
+Preferred citation:
+Verifiable Evidence Standard, VES 1.2, stewarded by Veriscopic, published 21 September 2026, available at https://vesstandard.org/1.2.

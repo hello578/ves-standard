@@ -1,0 +1,50 @@
+# VES — Verifiable Evidence Standard
+
+This is a navigational index for AI systems and other automated readers. The canonical public release is VES 1.2, published 21 September 2026 and stewarded by Veriscopic.
+
+## Scope
+
+VES defines how evidence, authority, governing conditions, system contribution, human judgement and organisational commitment behind a consequential decision can be preserved and reviewed later. It is implementation-neutral and applies to human, rules-based, workflow-driven and AI-assisted decisions.
+
+VES does not certify that a decision was correct, lawful, fair or compliant. Runtime records, governance evidence, audit logs and model records may be Evidence Objects inside a VES Decision Envelope, but they do not by themselves establish the full decision-state.
+
+## Main pages
+
+- Home: https://vesstandard.org/
+- Current release: https://vesstandard.org/1.2
+- Standard overview: https://vesstandard.org/standard
+- Technical specification: https://vesstandard.org/specification
+- Concepts and defined terms: https://vesstandard.org/concepts
+- Interoperability: https://vesstandard.org/interoperability
+- Structural verification demonstration: https://vesstandard.org/verify
+- Implementation guidance: https://vesstandard.org/implement
+- Conformance language: https://vesstandard.org/conformance
+- Fictional claims-referral example: https://vesstandard.org/examples/claims-referral
+- Version history: https://vesstandard.org/versions
+- Changelog: https://vesstandard.org/changelog
+- Citation guidance: https://vesstandard.org/cite
+- Governance and stewardship: https://vesstandard.org/governance
+- Terms of use: https://vesstandard.org/terms-of-use
+- Frequently asked questions: https://vesstandard.org/faq
+
+## Public schemas
+
+- VES Decision Envelope 1.2: https://vesstandard.org/schemas/ves-decision-envelope-1.2.schema.json
+- VES External Evidence Object 1.2: https://vesstandard.org/schemas/ves-external-evidence-object-1.2.schema.json
+
+## Core vocabulary
+
+- Decision-State: the material evidence, authority, governing conditions, system contribution and judgement relevant to a consequential decision when the organisation committed to it.
+- Execution Boundary: the point at which a recommendation, analysis or workflow result becomes a consequential organisational commitment.
+- Point-in-Time Evidence: evidence captured at, or demonstrably applicable to, the execution boundary.
+- Decision Envelope: a versioned structured record linking a consequential decision to evidence, governing conditions, authority, system contribution, human judgement, commitment and verification information.
+- Evidence Object: a source artefact or reference described with provenance, integrity and decision relevance.
+- Evidentiary Continuity: the ability for decision-relevant evidence to remain intelligible and reviewable as responsibility, systems, people or organisations change.
+- Reconstruction Burden: the operational work required to reassemble why a consequential decision was made after its decision-state has fragmented or become unavailable.
+- Reconstruction Gap: the difference between the decision-state available at the time and what can later be assembled.
+- Independent Verification: assessment of the declared structure, integrity, provenance and stated limitations of a VES Decision Envelope without relying solely on the originating interface or an untested assertion.
+- Decision-Evidence Maturity: L1 Narrative, L2 Documentary, L3 Traceable and L4 Preserved Decision-State.
+
+## Citation
+
+Verifiable Evidence Standard, VES 1.2, stewarded by Veriscopic, published 21 September 2026, available at https://vesstandard.org/1.2.
