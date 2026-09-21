@@ -24,9 +24,11 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "Verifiable Evidence Standard (VES)", description: siteConfig.description },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   other: {
-    "ves:version": "1.2-draft",
-    "ves:publication-status": "draft",
-    "ves:active-version": "1.1",
+    "ves:version": "1.2",
+    "ves:publication-status": "current",
+    "ves:publication-date": "2026-09-21",
+    "ves:identifier": "https://vesstandard.org/1.2",
+    "ves:previous-version": "1.1",
     "ves:steward": "Veriscopic",
   },
 }
