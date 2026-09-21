@@ -4,7 +4,7 @@ import { namingClarification } from "@/lib/site"
 const groups = [
   ["Standard", [["Standard", "/standard"], ["Specification", "/specification"], ["Concepts", "/concepts"], ["Interoperability", "/interoperability"], ["Conformance", "/conformance"], ["Versions", "/versions"]]],
   ["Resources", [["Verify", "/verify"], ["Implement", "/implement"], ["Claims example", "/examples/claims-referral"], ["FAQ", "/faq"]]],
-  ["Stewardship", [["Governance", "/governance"], ["Changelog", "/changelog"], ["Cite VES", "/cite"], ["Veriscopic", "https://veriscopic.com"]]],
+  ["Stewardship", [["Governance", "/governance"], ["Changelog", "/changelog"], ["Cite VES", "/cite"], ["Terms of use", "/terms-of-use"], ["Veriscopic", "https://veriscopic.com"]]],
 ] as const
 
 export function Footer() {
@@ -23,7 +23,7 @@ export function Footer() {
           </div>
         </div>
         <p className="footer-note">{namingClarification}</p>
-        <div className="footer-bottom"><span>VES 1.2 Draft · Stewarded by Veriscopic</span><span><Link href="/privacy">Privacy</Link> · <Link href="/cookies">Cookies</Link> · © 2026 Veriscopic</span></div>
+        <div className="footer-bottom"><span>VES 1.2 · Stewarded by Veriscopic</span><span><Link href="/privacy">Privacy</Link> · <Link href="/cookies">Cookies</Link> · © 2026 Veriscopic</span></div>
       </div>
     </footer>
   )

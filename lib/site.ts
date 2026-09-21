@@ -1,9 +1,10 @@
 export const siteConfig = {
   name: "The Verifiable Evidence Standard",
   shortName: "VES",
-  version: "1.2 Draft",
-  draftPublicationDate: "2026-09-20",
-  activeVersion: "1.1",
+  version: "1.2",
+  publicationDate: "2026-09-21",
+  previousVersion: "1.1",
+  identifier: "https://vesstandard.org/1.2",
   url: "https://vesstandard.org",
   description:
     "A published, implementation-neutral standard for preserving interoperable evidence, authority, conditions and judgement around consequential decisions.",

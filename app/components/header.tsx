@@ -24,11 +24,11 @@ export function Header() {
           ))}
         </nav>
         <details className="version-menu">
-          <summary><span>Version</span> 1.2 Draft</summary>
+          <summary><span>Version</span> 1.2</summary>
           <div>
-            <strong>VES 1.2 Draft</strong>
-            <small>Latest draft · {siteConfig.draftPublicationDate}</small>
-            <p>VES {siteConfig.activeVersion} remains active and citable.</p>
+            <strong>VES 1.2</strong>
+            <small>Current publication · {siteConfig.publicationDate}</small>
+            <p>Current, published and citable. VES {siteConfig.previousVersion} is superseded.</p>
             <Link href="/versions">Version history</Link>
             <Link href="/cite">Permanent citation</Link>
           </div>
@@ -43,8 +43,8 @@ export function Header() {
           <motion.nav id="mobile-nav" className="mobile-menu" aria-label="Mobile navigation" initial={reduceMotion ? false : { opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={reduceMotion ? undefined : { opacity: 0, y: -8 }} transition={{ duration: 0.18 }}>
             <div className="container">
               {primaryNavigation.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</Link>)}
-              <div className="mobile-version"><span>Latest draft</span><strong>VES 1.2 Draft</strong><small>Published: {siteConfig.draftPublicationDate}</small><p>VES {siteConfig.activeVersion} remains active and citable.</p><Link href="/versions" onClick={() => setOpen(false)}>Version history</Link></div>
-              <Link href="/standard" className="mobile-draft-link" onClick={() => setOpen(false)}>Read VES 1.2 Draft</Link>
+              <div className="mobile-version"><span>Current publication</span><strong>VES 1.2</strong><small>Published: {siteConfig.publicationDate}</small><p>Current, published and citable. VES {siteConfig.previousVersion} is superseded.</p><Link href="/versions" onClick={() => setOpen(false)}>Version history</Link></div>
+              <Link href="/standard" className="mobile-draft-link" onClick={() => setOpen(false)}>Read VES 1.2</Link>
             </div>
           </motion.nav>
         )}

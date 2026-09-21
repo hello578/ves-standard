@@ -15,6 +15,6 @@ export default function ConceptsPage() {
     <div className="callout"><strong>Foundational distinction</strong><p>Most systems can describe a decision after the event. VES concerns whether the material evidence, authority and governing conditions relevant to that decision were preserved in a form that can be checked later.</p><p>A recorded action is not necessarily an explainable decision.</p></div>
     <dl className="core-concepts core-concepts-citable">{coreConcepts.map((concept)=><div id={concept.id} key={concept.id}><dt>{concept.term}</dt><dd>{concept.definition}</dd><a className="definition-permalink" href={`#${concept.id}`} aria-label={`Permanent link to ${concept.term}`}>Permanent link</a></div>)}</dl>
     <h2 id="maturity-levels">Decision-Evidence Maturity levels</h2><ul>{maturityLevels.map(([level,title,description])=><li key={level}><strong>{level} {title}:</strong> {description}</li>)}</ul>
-    <p>For normative data fields and verification semantics, see the <Link href="/specification">VES 1.2 Draft specification</Link>.</p>
+    <p>For normative data fields and verification semantics, see the <Link href="/specification">VES 1.2 specification</Link>.</p>
   </PageFrame></>
 }

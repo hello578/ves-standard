@@ -17,7 +17,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">VES 1.2 Draft · Stewarded by Veriscopic</p>
+            <p className="eyebrow">VES 1.2 · Stewarded by Veriscopic</p>
             <h1>Verifiable evidence for consequential decisions.</h1>
             <p className="hero-lead">VES is a published standard for preserving the evidence, authority, conditions, judgement and commitment behind consequential decisions, so they can be independently reviewed without reconstructing them later.</p>
             <p className="hero-support">Valid evidence is not always sufficient decision evidence.</p>
